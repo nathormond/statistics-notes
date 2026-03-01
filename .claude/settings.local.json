@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda run -n stats-notes-python jupyter nbconvert --to notebook --execute 03-political-bias-by-topic.ipynb --output 03-political-bias-by-topic.ipynb --ExecutePreprocessor.timeout=300)",
+      "Bash(conda run -n stats-notes-python python -c \":*)",
+      "Bash(python3 -c \":*)",
+      "Bash(jupyter nbconvert --to notebook --execute 04-guest-interview-bias.ipynb --output 04-guest-interview-bias-executed.ipynb)",
+      "Bash(conda run -n stats-notes-python jupyter nbconvert --to notebook --execute notebooks/04-guest-interview-bias.ipynb --output 04-guest-interview-bias-executed.ipynb)"
+    ]
+  }
+}
