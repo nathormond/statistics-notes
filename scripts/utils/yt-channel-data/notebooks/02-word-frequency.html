@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tf-idf-distinctive-words-per-year" id="toc-tf-idf-distinctive-words-per-year" class="nav-link" data-scroll-target="#tf-idf-distinctive-words-per-year">5 — TF-IDF: distinctive words per year</a></li>
   <li><a href="#zipfs-law-check" id="toc-zipfs-law-check" class="nav-link" data-scroll-target="#zipfs-law-check">6 — Zipf’s law check</a></li>
   <li><a href="#hapax-legomena-vocabulary-richness" id="toc-hapax-legomena-vocabulary-richness" class="nav-link" data-scroll-target="#hapax-legomena-vocabulary-richness">7 — Hapax legomena &amp; vocabulary richness</a></li>
+  <li><a href="#title-context-leaning-leftright" id="toc-title-context-leaning-leftright" class="nav-link" data-scroll-target="#title-context-leaning-leftright">5 — Title context leaning (left/right)</a></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>All analyses use standard NLP pre-processing (lowercasing, stopword removal, tokenisation).<br>
 No political labels or sentiment scores are assigned here — this is purely descriptive.</p>
-<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:24.784470Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:24.784350Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:26.913211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:26.912781Z&quot;}}" data-execution_count="1">
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:46.797459Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:46.797213Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.029031Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.028540Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
@@ -254,7 +255,7 @@ No political labels or sentiment scores are assigned here — this is purely des
 </div>
 <section id="load-data-preprocessing-helpers" class="level2">
 <h2 class="anchored" data-anchor-id="load-data-preprocessing-helpers">0 — Load data &amp; preprocessing helpers</h2>
-<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:26.914582Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:26.914469Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:26.939752Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:26.939046Z&quot;}}" data-execution_count="2">
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.030269Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.030170Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.047761Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.047372Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>DATA_PATH <span class="op">=</span> <span class="st">"../../../../data/TRIGGERnometry-video-taxonomy/trigggerpod.csv"</span></span>
@@ -269,7 +270,7 @@ No political labels or sentiment scores are assigned here — this is purely des
 Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:26.954917Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:26.954800Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.327081Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.326699Z&quot;}}" data-execution_count="3">
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.061483Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.061397Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.432836Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.432461Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>STOP_WORDS <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">"english"</span>))</span>
@@ -329,7 +330,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </section>
 <section id="title-word-frequency" class="level2">
 <h2 class="anchored" data-anchor-id="title-word-frequency">1 — Title word frequency</h2>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.328052Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.327986Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.333333Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.332955Z&quot;}}" data-execution_count="4">
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.433917Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.433841Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.438945Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.438601Z&quot;}}" data-execution_count="4">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>title_freq <span class="op">=</span> Counter(tok <span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"title_tokens"</span>] <span class="cf">for</span> tok <span class="kw">in</span> tokens)</span>
@@ -460,7 +461,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.334237Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.334187Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.433229Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.432859Z&quot;}}" data-execution_count="5">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.439812Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.439756Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.533986Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.533553Z&quot;}}" data-execution_count="5">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart — top 40 title words</span></span>
@@ -484,20 +485,25 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.434279Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.434207Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.777959Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.777582Z&quot;}}" data-execution_count="6">
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.534981Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.534909Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.600023Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.599622Z&quot;}}" data-execution_count="6">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Word cloud — titles</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>wc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>               colormap<span class="op">=</span><span class="st">"viridis"</span>, max_words<span class="op">=</span><span class="dv">150</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>wc.generate_from_frequencies(title_freq)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Title word cloud"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple chart: frequency of words in video titles</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>TOP_N <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>simple_title_freq_df <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    title_freq.most_common(TOP_N), columns<span class="op">=</span>[<span class="st">"word"</span>, <span class="st">"count"</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ax.bar(simple_title_freq_df[<span class="st">"word"</span>], simple_title_freq_df[<span class="st">"count"</span>], color<span class="op">=</span><span class="st">"#4F46E5"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"Word frequency in video titles (Top </span><span class="sc">{</span>TOP_N<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Word"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">"x"</span>, rotation<span class="op">=</span><span class="dv">60</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>simple_title_freq_df.head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -506,31 +512,89 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </figure>
 </div>
 </div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">word</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>shorts</td>
+<td>138</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>culture</td>
+<td>77</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>politics</td>
+<td>75</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>truth</td>
+<td>58</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>war</td>
+<td>56</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>trump</td>
+<td>52</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>women</td>
+<td>51</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>live</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>trans</td>
+<td>49</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>andrew</td>
+<td>47</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<section id="b-title-bigrams" class="level3">
-<h3 class="anchored" data-anchor-id="b-title-bigrams">1b — Title bigrams</h3>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.780148Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.780076Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.852826Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.852436Z&quot;}}" data-execution_count="7">
+</div>
+</div>
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.600923Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.600847Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.927464Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.927142Z&quot;}}" data-execution_count="7">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> bigrams <span class="im">as</span> nltk_bigrams</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>title_bigrams <span class="op">=</span> Counter()</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"title_tokens"</span>]:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    title_bigrams.update(nltk_bigrams(tokens))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>top_bi <span class="op">=</span> title_bigrams.most_common(<span class="dv">30</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> (a, b), _ <span class="kw">in</span> top_bi]</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [c <span class="cf">for</span> _, c <span class="kw">in</span> top_bi]</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(labels)), values, color<span class="op">=</span><span class="st">"coral"</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(labels)))</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(labels)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 30 bigrams in video titles"</span>)</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Word cloud — titles</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>wc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>               colormap<span class="op">=</span><span class="st">"viridis"</span>, max_words<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>wc.generate_from_frequencies(title_freq)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Title word cloud"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -540,24 +604,57 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
 </div>
+<section id="b-title-bigrams" class="level3">
+<h3 class="anchored" data-anchor-id="b-title-bigrams">1b — Title bigrams</h3>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:48.929182Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:48.929095Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:48.999190Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:48.998672Z&quot;}}" data-execution_count="8">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> bigrams <span class="im">as</span> nltk_bigrams</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>title_bigrams <span class="op">=</span> Counter()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"title_tokens"</span>]:</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    title_bigrams.update(nltk_bigrams(tokens))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>top_bi <span class="op">=</span> title_bigrams.most_common(<span class="dv">30</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> (a, b), _ <span class="kw">in</span> top_bi]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [c <span class="cf">for</span> _, c <span class="kw">in</span> top_bi]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(labels)), values, color<span class="op">=</span><span class="st">"coral"</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(labels)))</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(labels)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 30 bigrams in video titles"</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-word-frequency_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 <hr>
 </section>
 </section>
 <section id="description-word-frequency" class="level2">
 <h2 class="anchored" data-anchor-id="description-word-frequency">2 — Description word frequency</h2>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.853890Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.853835Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.862828Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.862503Z&quot;}}" data-execution_count="8">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.000246Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.000187Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:49.008851Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:49.008516Z&quot;}}" data-execution_count="9">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>desc_freq <span class="op">=</span> Counter(tok <span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"desc_tokens"</span>] <span class="cf">for</span> tok <span class="kw">in</span> tokens)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>desc_top50 <span class="op">=</span> desc_freq.most_common(<span class="dv">50</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique description tokens: </span><span class="sc">{</span><span class="bu">len</span>(desc_freq)<span class="sc">:,}</span><span class="ss">"</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(desc_top50, columns<span class="op">=</span>[<span class="st">"token"</span>, <span class="st">"count"</span>]).head(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>desc_freq <span class="op">=</span> Counter(tok <span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"desc_tokens"</span>] <span class="cf">for</span> tok <span class="kw">in</span> tokens)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>desc_top50 <span class="op">=</span> desc_freq.most_common(<span class="dv">50</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique description tokens: </span><span class="sc">{</span><span class="bu">len</span>(desc_freq)<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(desc_top50, columns<span class="op">=</span>[<span class="st">"token"</span>, <span class="st">"count"</span>]).head(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unique description tokens: 8,540</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -676,42 +773,20 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.863790Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.863733Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:27.941976Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:27.941567Z&quot;}}" data-execution_count="9">
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.009782Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.009715Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:49.086701Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:49.086383Z&quot;}}" data-execution_count="10">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>words, counts <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>desc_freq.most_common(<span class="dv">40</span>))</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(words)), counts, color<span class="op">=</span><span class="st">"mediumseagreen"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(words)))</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(words)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 40 words in video descriptions"</span>)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02-word-frequency_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:27.943042Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:27.942985Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:28.270628Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:28.270231Z&quot;}}" data-execution_count="10">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>wc_desc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                    colormap<span class="op">=</span><span class="st">"magma"</span>, max_words<span class="op">=</span><span class="dv">150</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>wc_desc.generate_from_frequencies(desc_freq)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc_desc, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Description word cloud"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>words, counts <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>desc_freq.most_common(<span class="dv">40</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(words)), counts, color<span class="op">=</span><span class="st">"mediumseagreen"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(words)))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(words)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 40 words in video descriptions"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -721,28 +796,19 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
 </div>
-<section id="b-description-bigrams" class="level3">
-<h3 class="anchored" data-anchor-id="b-description-bigrams">2b — Description bigrams</h3>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:28.272082Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:28.272004Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:28.361130Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:28.360734Z&quot;}}" data-execution_count="11">
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.087609Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.087556Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:49.405945Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:49.405592Z&quot;}}" data-execution_count="11">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>desc_bigrams <span class="op">=</span> Counter()</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"desc_tokens"</span>]:</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    desc_bigrams.update(nltk_bigrams(tokens))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wc_desc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                    colormap<span class="op">=</span><span class="st">"magma"</span>, max_words<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>wc_desc.generate_from_frequencies(desc_freq)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>top_bi_d <span class="op">=</span> desc_bigrams.most_common(<span class="dv">30</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>labels_d <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> (a, b), _ <span class="kw">in</span> top_bi_d]</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>values_d <span class="op">=</span> [c <span class="cf">for</span> _, c <span class="kw">in</span> top_bi_d]</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(labels_d)), values_d, color<span class="op">=</span><span class="st">"mediumpurple"</span>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(labels_d)))</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(labels_d)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 30 bigrams in video descriptions"</span>)</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc_desc, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Description word cloud"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -752,29 +818,60 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </div>
 </div>
 </div>
+<section id="b-description-bigrams" class="level3">
+<h3 class="anchored" data-anchor-id="b-description-bigrams">2b — Description bigrams</h3>
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.407415Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.407338Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:49.522011Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:49.521641Z&quot;}}" data-execution_count="12">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>desc_bigrams <span class="op">=</span> Counter()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"desc_tokens"</span>]:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    desc_bigrams.update(nltk_bigrams(tokens))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>top_bi_d <span class="op">=</span> desc_bigrams.most_common(<span class="dv">30</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>labels_d <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> (a, b), _ <span class="kw">in</span> top_bi_d]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>values_d <span class="op">=</span> [c <span class="cf">for</span> _, c <span class="kw">in</span> top_bi_d]</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(labels_d)), values_d, color<span class="op">=</span><span class="st">"mediumpurple"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(labels_d)))</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(labels_d)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 30 bigrams in video descriptions"</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-word-frequency_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 <hr>
 </section>
 </section>
 <section id="cumulative-title-description-word-frequency" class="level2">
 <h2 class="anchored" data-anchor-id="cumulative-title-description-word-frequency">3 — Cumulative (title + description) word frequency</h2>
-<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:28.362118Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:28.362060Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:28.474439Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:28.474060Z&quot;}}" data-execution_count="12">
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.522988Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.522926Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:49.606355Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:49.605970Z&quot;}}" data-execution_count="13">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>combined_freq <span class="op">=</span> Counter(tok <span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"combined_tokens"</span>] <span class="cf">for</span> tok <span class="kw">in</span> tokens)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique combined tokens: </span><span class="sc">{</span><span class="bu">len</span>(combined_freq)<span class="sc">:,}</span><span class="ss">"</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>words_c, counts_c <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>combined_freq.most_common(<span class="dv">40</span>))</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(words_c)), counts_c, color<span class="op">=</span><span class="st">"darkorange"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(words_c)))</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(words_c)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 40 words — cumulative (title + description)"</span>)</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>combined_freq <span class="op">=</span> Counter(tok <span class="cf">for</span> tokens <span class="kw">in</span> df[<span class="st">"combined_tokens"</span>] <span class="cf">for</span> tok <span class="kw">in</span> tokens)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Unique combined tokens: </span><span class="sc">{</span><span class="bu">len</span>(combined_freq)<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>words_c, counts_c <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>combined_freq.most_common(<span class="dv">40</span>))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>ax.barh(<span class="bu">range</span>(<span class="bu">len</span>(words_c)), counts_c, color<span class="op">=</span><span class="st">"darkorange"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(<span class="bu">len</span>(words_c)))</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(words_c)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Top 40 words — cumulative (title + description)"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unique combined tokens: 8,994</code></pre>
@@ -782,80 +879,74 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02-word-frequency_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="02-word-frequency_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:28.475397Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:28.475344Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:28.876095Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:28.875801Z&quot;}}" data-execution_count="13">
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.607331Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.607277Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:49.984672Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:49.984339Z&quot;}}" data-execution_count="14">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>wc_comb <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                    colormap<span class="op">=</span><span class="st">"inferno"</span>, max_words<span class="op">=</span><span class="dv">200</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>wc_comb.generate_from_frequencies(combined_freq)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc_comb, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Cumulative word cloud (title + description)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wc_comb <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">1200</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                    colormap<span class="op">=</span><span class="st">"inferno"</span>, max_words<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>wc_comb.generate_from_frequencies(combined_freq)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc_comb, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Cumulative word cloud (title + description)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02-word-frequency_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="02-word-frequency_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <section id="b-side-by-side-comparison-title-vs-description-vocabulary" class="level3">
 <h3 class="anchored" data-anchor-id="b-side-by-side-comparison-title-vs-description-vocabulary">3b — Side-by-side comparison: title vs description vocabulary</h3>
-<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:28.878022Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:28.877958Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:28.964092Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:28.963596Z&quot;}}" data-execution_count="14">
+<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:49.986279Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:49.986207Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.068203Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.067915Z&quot;}}" data-execution_count="15">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which words are disproportionately used in titles vs descriptions?</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>top_combined <span class="op">=</span> [w <span class="cf">for</span> w, _ <span class="kw">in</span> combined_freq.most_common(<span class="dv">80</span>)]</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>title_total <span class="op">=</span> <span class="bu">sum</span>(title_freq.values())</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>desc_total <span class="op">=</span> <span class="bu">sum</span>(desc_freq.values())</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>comparison <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"token"</span>: top_combined,</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title_freq"</span>: [title_freq[w] <span class="cf">for</span> w <span class="kw">in</span> top_combined],</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"desc_freq"</span>: [desc_freq[w] <span class="cf">for</span> w <span class="kw">in</span> top_combined],</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>comparison[<span class="st">"title_rate"</span>] <span class="op">=</span> comparison[<span class="st">"title_freq"</span>] <span class="op">/</span> title_total</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>comparison[<span class="st">"desc_rate"</span>] <span class="op">=</span> comparison[<span class="st">"desc_freq"</span>] <span class="op">/</span> desc_total</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>comparison[<span class="st">"log_ratio"</span>] <span class="op">=</span> np.log2(</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    (comparison[<span class="st">"title_rate"</span>] <span class="op">+</span> <span class="fl">1e-8</span>) <span class="op">/</span> (comparison[<span class="st">"desc_rate"</span>] <span class="op">+</span> <span class="fl">1e-8</span>)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokens most skewed toward titles vs descriptions</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>comparison_sorted <span class="op">=</span> comparison.reindex(</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    comparison[<span class="st">"log_ratio"</span>].<span class="bu">abs</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>).index</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>top_skewed <span class="op">=</span> comparison_sorted.head(<span class="dv">40</span>).sort_values(<span class="st">"log_ratio"</span>)</span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>colours <span class="op">=</span> [<span class="st">"steelblue"</span> <span class="cf">if</span> v <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"coral"</span> <span class="cf">for</span> v <span class="kw">in</span> top_skewed[<span class="st">"log_ratio"</span>]]</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>ax.barh(top_skewed[<span class="st">"token"</span>], top_skewed[<span class="st">"log_ratio"</span>], color<span class="op">=</span>colours)</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"grey"</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"log₂(title_rate / desc_rate)  →  positive = title-heavy"</span>)</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Title vs description vocabulary skew (top 80 combined words)"</span>)</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which words are disproportionately used in titles vs descriptions?</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>top_combined <span class="op">=</span> [w <span class="cf">for</span> w, _ <span class="kw">in</span> combined_freq.most_common(<span class="dv">80</span>)]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>title_total <span class="op">=</span> <span class="bu">sum</span>(title_freq.values())</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>desc_total <span class="op">=</span> <span class="bu">sum</span>(desc_freq.values())</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>comparison <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"token"</span>: top_combined,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title_freq"</span>: [title_freq[w] <span class="cf">for</span> w <span class="kw">in</span> top_combined],</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"desc_freq"</span>: [desc_freq[w] <span class="cf">for</span> w <span class="kw">in</span> top_combined],</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>comparison[<span class="st">"title_rate"</span>] <span class="op">=</span> comparison[<span class="st">"title_freq"</span>] <span class="op">/</span> title_total</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>comparison[<span class="st">"desc_rate"</span>] <span class="op">=</span> comparison[<span class="st">"desc_freq"</span>] <span class="op">/</span> desc_total</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>comparison[<span class="st">"log_ratio"</span>] <span class="op">=</span> np.log2(</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    (comparison[<span class="st">"title_rate"</span>] <span class="op">+</span> <span class="fl">1e-8</span>) <span class="op">/</span> (comparison[<span class="st">"desc_rate"</span>] <span class="op">+</span> <span class="fl">1e-8</span>)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokens most skewed toward titles vs descriptions</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>comparison_sorted <span class="op">=</span> comparison.reindex(</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    comparison[<span class="st">"log_ratio"</span>].<span class="bu">abs</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>).index</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>top_skewed <span class="op">=</span> comparison_sorted.head(<span class="dv">40</span>).sort_values(<span class="st">"log_ratio"</span>)</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>colours <span class="op">=</span> [<span class="st">"steelblue"</span> <span class="cf">if</span> v <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"coral"</span> <span class="cf">for</span> v <span class="kw">in</span> top_skewed[<span class="st">"log_ratio"</span>]]</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>ax.barh(top_skewed[<span class="st">"token"</span>], top_skewed[<span class="st">"log_ratio"</span>], color<span class="op">=</span>colours)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"grey"</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"log2(title_rate / desc_rate) -&gt; positive = title-heavy"</span>)</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Title vs description vocabulary skew (top 80 combined words)"</span>)</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_48736/4071423591.py:30: UserWarning: Glyph 8322 (\N{SUBSCRIPT TWO}) missing from font(s) Arial.
-  plt.tight_layout()
-/opt/homebrew/Caskroom/miniconda/base/envs/stats-notes-python/lib/python3.12/site-packages/IPython/core/pylabtools.py:170: UserWarning: Glyph 8322 (\N{SUBSCRIPT TWO}) missing from font(s) Arial.
-  fig.canvas.print_figure(bytes_io, **kw)</code></pre>
-</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02-word-frequency_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="02-word-frequency_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -865,7 +956,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </section>
 <section id="temporal-trends-word-frequency-over-time" class="level2">
 <h2 class="anchored" data-anchor-id="temporal-trends-word-frequency-over-time">4 — Temporal trends: word frequency over time</h2>
-<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:28.965011Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:28.964954Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:29.473888Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:29.473467Z&quot;}}" data-execution_count="15">
+<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:50.069256Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:50.069198Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.574297Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.573886Z&quot;}}" data-execution_count="16">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"year"</span>] <span class="op">=</span> df[<span class="st">"published_date"</span>].dt.year</span>
@@ -901,7 +992,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02-word-frequency_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="02-word-frequency_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -910,7 +1001,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </section>
 <section id="tf-idf-distinctive-words-per-year" class="level2">
 <h2 class="anchored" data-anchor-id="tf-idf-distinctive-words-per-year">5 — TF-IDF: distinctive words per year</h2>
-<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:29.474917Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:29.474858Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:29.511732Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:29.511422Z&quot;}}" data-execution_count="16">
+<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:50.575226Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:50.575168Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.609305Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.608926Z&quot;}}" data-execution_count="17">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build one "document" per year from combined tokens</span></span>
@@ -950,7 +1041,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </section>
 <section id="zipfs-law-check" class="level2">
 <h2 class="anchored" data-anchor-id="zipfs-law-check">6 — Zipf’s law check</h2>
-<div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:29.512783Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:29.512714Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:29.649887Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:29.649537Z&quot;}}" data-execution_count="17">
+<div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:50.610218Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:50.610158Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.746626Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.746303Z&quot;}}" data-execution_count="18">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zipf plot for the combined corpus</span></span>
@@ -968,7 +1059,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02-word-frequency_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="02-word-frequency_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -977,7 +1068,7 @@ Date range: 2018-04-23 → 2026-03-01</code></pre>
 </section>
 <section id="hapax-legomena-vocabulary-richness" class="level2">
 <h2 class="anchored" data-anchor-id="hapax-legomena-vocabulary-richness">7 — Hapax legomena &amp; vocabulary richness</h2>
-<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:15:29.650927Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:15:29.650874Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:15:29.653124Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:15:29.652825Z&quot;}}" data-execution_count="18">
+<div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:50.747608Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:50.747550Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.749878Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.749569Z&quot;}}" data-execution_count="19">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, freq <span class="kw">in</span> [(<span class="st">"Title"</span>, title_freq), (<span class="st">"Description"</span>, desc_freq), (<span class="st">"Combined"</span>, combined_freq)]:</span>
@@ -995,6 +1086,698 @@ Combined      tokens= 126,263  vocab= 8,994  hapax=3,437  TTR=0.0712</code></pre
 </div>
 <hr>
 <p><strong>Next steps:</strong> With these baseline frequency profiles in hand we can assess which terms warrant deeper investigation before moving on to guest-name extraction, topic modelling, and political-affiliation analysis.</p>
+<hr>
+</section>
+<section id="title-context-leaning-leftright" class="level2">
+<h2 class="anchored" data-anchor-id="title-context-leaning-leftright">5 — Title context leaning (left/right)</h2>
+<p>This section adds a lightweight, transparent heuristic to estimate whether title language leans left/right:</p>
+<ul>
+<li>Build a per-title lean score from curated left/right cue lexicons.</li>
+<li>For politically contextual terms (e.g.&nbsp;<em>woke</em>, <em>trans</em>, <em>israel</em>), compute the average lean score of titles where they appear.</li>
+<li>Classify each title as <strong>left-leaning</strong>, <strong>right-leaning</strong>, <strong>contested</strong>, <strong>neutral</strong>, or <strong>unknown</strong>.</li>
+</ul>
+<p>Label definitions: - <strong>Unknown</strong>: no left/right cue words appear in the title (insufficient signal to classify). - <strong>Contested</strong>: cue words from <strong>both</strong> left and right lexicons appear, pulling in opposite directions — the framing is genuinely debatable. - <strong>Neutral</strong>: cue words appear from one side only, but the signal is too weak to exceed the directional threshold.</p>
+<blockquote class="blockquote">
+<p>This is a lexical/context heuristic, not a definitive political label.</p>
+</blockquote>
+<div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:50.750975Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:50.750915Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.779423Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.779076Z&quot;}}" data-execution_count="20">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Heuristic cue lexicons for title-level leaning</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>LEFT_CUES <span class="op">=</span> {</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"left"</span>, <span class="st">"liberal"</span>, <span class="st">"progressive"</span>, <span class="st">"socialist"</span>, <span class="st">"socialism"</span>, <span class="st">"democrat"</span>, <span class="st">"democrats"</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"equality"</span>, <span class="st">"equity"</span>, <span class="st">"inclusion"</span>, <span class="st">"feminism"</span>, <span class="st">"feminist"</span>, <span class="st">"climate"</span>, <span class="st">"union"</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"workers"</span>, <span class="st">"redistribution"</span>, <span class="st">"regulation"</span>, <span class="st">"welfare"</span>, <span class="st">"palestine"</span>, <span class="st">"immigration"</span>,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"abortion"</span>, <span class="st">"trans"</span>, <span class="st">"diversity"</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>RIGHT_CUES <span class="op">=</span> {</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"right"</span>, <span class="st">"conservative"</span>, <span class="st">"conservatives"</span>, <span class="st">"republican"</span>, <span class="st">"republicans"</span>, <span class="st">"trump"</span>, <span class="st">"maga"</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"capitalism"</span>, <span class="st">"patriot"</span>, <span class="st">"nationalism"</span>, <span class="st">"border"</span>, <span class="st">"tradition"</span>, <span class="st">"family"</span>, <span class="st">"faith"</span>,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"israel"</span>, <span class="st">"freedom"</span>, <span class="st">"guns"</span>, <span class="st">"gun"</span>, <span class="st">"woke"</span>, <span class="st">"wokeism"</span>, <span class="st">"antiwoke"</span>, <span class="st">"sovereignty"</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Candidate contextual terms where framing can plausibly imply endorsement/rejection</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>CONTEXT_TERMS <span class="op">=</span> {</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"left"</span>, <span class="st">"right"</span>, <span class="st">"woke"</span>, <span class="st">"trans"</span>, <span class="st">"israel"</span>, <span class="st">"palestine"</span>, <span class="st">"trump"</span>, <span class="st">"biden"</span>,</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"immigration"</span>, <span class="st">"abortion"</span>, <span class="st">"climate"</span>, <span class="st">"capitalism"</span>, <span class="st">"socialism"</span>, <span class="st">"feminism"</span>,</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"democracy"</span>, <span class="st">"race"</span>, <span class="st">"gender"</span>, <span class="st">"ukraine"</span>, <span class="st">"gaza"</span>, <span class="st">"war"</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> score_tokens(tokens: <span class="bu">list</span>[<span class="bu">str</span>], exclude_token: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>, <span class="bu">int</span>, <span class="bu">int</span>]:</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return (lean_score, evidence_hits, right_hits, left_hits)."""</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> exclude_token <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>        tokens <span class="op">=</span> [t <span class="cf">for</span> t <span class="kw">in</span> tokens <span class="cf">if</span> t <span class="op">!=</span> exclude_token]</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    right_hits <span class="op">=</span> <span class="bu">sum</span>(t <span class="kw">in</span> RIGHT_CUES <span class="cf">for</span> t <span class="kw">in</span> tokens)</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>    left_hits <span class="op">=</span> <span class="bu">sum</span>(t <span class="kw">in</span> LEFT_CUES <span class="cf">for</span> t <span class="kw">in</span> tokens)</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> right_hits <span class="op">-</span> left_hits</span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>    evidence_hits <span class="op">=</span> right_hits <span class="op">+</span> left_hits</span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> score, evidence_hits, right_hits, left_hits</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lean_label(score: <span class="bu">float</span>, evidence_hits: <span class="bu">int</span>, right_hits: <span class="bu">int</span>, left_hits: <span class="bu">int</span>, threshold: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a><span class="co">    Unknown   = no cues at all.</span></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a><span class="co">    Contested = cues from BOTH sides present, but net score within threshold.</span></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a><span class="co">    Neutral   = cues present (one side only), but below directional threshold.</span></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> evidence_hits <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Unknown"</span></span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&gt;</span> threshold:</span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Right-leaning"</span></span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&lt;</span> <span class="op">-</span>threshold:</span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Left-leaning"</span></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> right_hits <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> left_hits <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Contested"</span></span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Neutral"</span></span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Title-level lean score across all videos</span></span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a>title_metrics <span class="op">=</span> df[<span class="st">"title_tokens"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> toks: score_tokens(toks))</span>
+<span id="cb27-53"><a href="#cb27-53" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"title_lean_score"</span>] <span class="op">=</span> title_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">0</span>])</span>
+<span id="cb27-54"><a href="#cb27-54" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"title_lean_evidence"</span>] <span class="op">=</span> title_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
+<span id="cb27-55"><a href="#cb27-55" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"title_right_hits"</span>] <span class="op">=</span> title_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">2</span>])</span>
+<span id="cb27-56"><a href="#cb27-56" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"title_left_hits"</span>] <span class="op">=</span> title_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">3</span>])</span>
+<span id="cb27-57"><a href="#cb27-57" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"title_lean_label"</span>] <span class="op">=</span> df.<span class="bu">apply</span>(</span>
+<span id="cb27-58"><a href="#cb27-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> row: lean_label(</span>
+<span id="cb27-59"><a href="#cb27-59" aria-hidden="true" tabindex="-1"></a>        row[<span class="st">"title_lean_score"</span>],</span>
+<span id="cb27-60"><a href="#cb27-60" aria-hidden="true" tabindex="-1"></a>        <span class="bu">int</span>(row[<span class="st">"title_lean_evidence"</span>]),</span>
+<span id="cb27-61"><a href="#cb27-61" aria-hidden="true" tabindex="-1"></a>        <span class="bu">int</span>(row[<span class="st">"title_right_hits"</span>]),</span>
+<span id="cb27-62"><a href="#cb27-62" aria-hidden="true" tabindex="-1"></a>        <span class="bu">int</span>(row[<span class="st">"title_left_hits"</span>]),</span>
+<span id="cb27-63"><a href="#cb27-63" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb27-64"><a href="#cb27-64" aria-hidden="true" tabindex="-1"></a>    axis<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-66"><a href="#cb27-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-67"><a href="#cb27-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-68"><a href="#cb27-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Context-term leaning table</span></span>
+<span id="cb27-69"><a href="#cb27-69" aria-hidden="true" tabindex="-1"></a>term_rows <span class="op">=</span> []</span>
+<span id="cb27-70"><a href="#cb27-70" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> term <span class="kw">in</span> <span class="bu">sorted</span>(CONTEXT_TERMS):</span>
+<span id="cb27-71"><a href="#cb27-71" aria-hidden="true" tabindex="-1"></a>    mask <span class="op">=</span> df[<span class="st">"title_tokens"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> toks: term <span class="kw">in</span> toks)</span>
+<span id="cb27-72"><a href="#cb27-72" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">int</span>(mask.<span class="bu">sum</span>())</span>
+<span id="cb27-73"><a href="#cb27-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb27-74"><a href="#cb27-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb27-75"><a href="#cb27-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-76"><a href="#cb27-76" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Exclude the term itself so we measure contextual framing around it</span></span>
+<span id="cb27-77"><a href="#cb27-77" aria-hidden="true" tabindex="-1"></a>    contextual_metrics <span class="op">=</span> df.loc[mask, <span class="st">"title_tokens"</span>].<span class="bu">apply</span>(</span>
+<span id="cb27-78"><a href="#cb27-78" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> toks: score_tokens(toks, exclude_token<span class="op">=</span>term)</span>
+<span id="cb27-79"><a href="#cb27-79" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb27-80"><a href="#cb27-80" aria-hidden="true" tabindex="-1"></a>    contextual_scores <span class="op">=</span> contextual_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">0</span>])</span>
+<span id="cb27-81"><a href="#cb27-81" aria-hidden="true" tabindex="-1"></a>    contextual_evidence <span class="op">=</span> contextual_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
+<span id="cb27-82"><a href="#cb27-82" aria-hidden="true" tabindex="-1"></a>    contextual_right <span class="op">=</span> contextual_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">2</span>])</span>
+<span id="cb27-83"><a href="#cb27-83" aria-hidden="true" tabindex="-1"></a>    contextual_left <span class="op">=</span> contextual_metrics.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">3</span>])</span>
+<span id="cb27-84"><a href="#cb27-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-85"><a href="#cb27-85" aria-hidden="true" tabindex="-1"></a>    mean_score <span class="op">=</span> <span class="bu">float</span>(contextual_scores.mean())</span>
+<span id="cb27-86"><a href="#cb27-86" aria-hidden="true" tabindex="-1"></a>    evidence_titles <span class="op">=</span> <span class="bu">int</span>((contextual_evidence <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>())</span>
+<span id="cb27-87"><a href="#cb27-87" aria-hidden="true" tabindex="-1"></a>    total_right <span class="op">=</span> <span class="bu">int</span>(contextual_right.<span class="bu">sum</span>())</span>
+<span id="cb27-88"><a href="#cb27-88" aria-hidden="true" tabindex="-1"></a>    total_left <span class="op">=</span> <span class="bu">int</span>(contextual_left.<span class="bu">sum</span>())</span>
+<span id="cb27-89"><a href="#cb27-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-90"><a href="#cb27-90" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Context-term label: contested if titles frame the term from BOTH directions</span></span>
+<span id="cb27-91"><a href="#cb27-91" aria-hidden="true" tabindex="-1"></a>    has_positive <span class="op">=</span> <span class="bu">int</span>((contextual_scores <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>())</span>
+<span id="cb27-92"><a href="#cb27-92" aria-hidden="true" tabindex="-1"></a>    has_negative <span class="op">=</span> <span class="bu">int</span>((contextual_scores <span class="op">&lt;</span> <span class="dv">0</span>).<span class="bu">sum</span>())</span>
+<span id="cb27-93"><a href="#cb27-93" aria-hidden="true" tabindex="-1"></a>    is_contested <span class="op">=</span> has_positive <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> has_negative <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb27-94"><a href="#cb27-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-95"><a href="#cb27-95" aria-hidden="true" tabindex="-1"></a>    term_rows.append({</span>
+<span id="cb27-96"><a href="#cb27-96" aria-hidden="true" tabindex="-1"></a>        <span class="st">"term"</span>: term,</span>
+<span id="cb27-97"><a href="#cb27-97" aria-hidden="true" tabindex="-1"></a>        <span class="st">"titles_with_term"</span>: n,</span>
+<span id="cb27-98"><a href="#cb27-98" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_evidence_titles"</span>: evidence_titles,</span>
+<span id="cb27-99"><a href="#cb27-99" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_evidence_share"</span>: evidence_titles <span class="op">/</span> n,</span>
+<span id="cb27-100"><a href="#cb27-100" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_lean_score"</span>: mean_score,</span>
+<span id="cb27-101"><a href="#cb27-101" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_lean_label"</span>: lean_label(</span>
+<span id="cb27-102"><a href="#cb27-102" aria-hidden="true" tabindex="-1"></a>            mean_score, evidence_titles, total_right, total_left, threshold<span class="op">=</span><span class="fl">0.25</span></span>
+<span id="cb27-103"><a href="#cb27-103" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb27-104"><a href="#cb27-104" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_titles_positive"</span>: has_positive,</span>
+<span id="cb27-105"><a href="#cb27-105" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_titles_negative"</span>: has_negative,</span>
+<span id="cb27-106"><a href="#cb27-106" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb27-107"><a href="#cb27-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-108"><a href="#cb27-108" aria-hidden="true" tabindex="-1"></a>context_lean_df <span class="op">=</span> (</span>
+<span id="cb27-109"><a href="#cb27-109" aria-hidden="true" tabindex="-1"></a>    pd.DataFrame(term_rows)</span>
+<span id="cb27-110"><a href="#cb27-110" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">"titles_with_term &gt;= 5"</span>)</span>
+<span id="cb27-111"><a href="#cb27-111" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">"context_lean_score"</span>, <span class="st">"titles_with_term"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb27-112"><a href="#cb27-112" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-113"><a href="#cb27-113" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-114"><a href="#cb27-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-115"><a href="#cb27-115" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Context terms with &gt;=5 title occurrences: </span><span class="sc">{</span><span class="bu">len</span>(context_lean_df)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb27-116"><a href="#cb27-116" aria-hidden="true" tabindex="-1"></a>context_lean_df.head(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Context terms with &gt;=5 title occurrences: 19</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">term</th>
+<th data-quarto-table-cell-role="th">titles_with_term</th>
+<th data-quarto-table-cell-role="th">context_evidence_titles</th>
+<th data-quarto-table-cell-role="th">context_evidence_share</th>
+<th data-quarto-table-cell-role="th">context_lean_score</th>
+<th data-quarto-table-cell-role="th">context_lean_label</th>
+<th data-quarto-table-cell-role="th">context_titles_positive</th>
+<th data-quarto-table-cell-role="th">context_titles_negative</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>feminism</td>
+<td>9</td>
+<td>4</td>
+<td>0.444444</td>
+<td>-0.444444</td>
+<td>Left-leaning</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>gender</td>
+<td>17</td>
+<td>2</td>
+<td>0.117647</td>
+<td>-0.176471</td>
+<td>Neutral</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>capitalism</td>
+<td>6</td>
+<td>1</td>
+<td>0.166667</td>
+<td>-0.166667</td>
+<td>Neutral</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>israel</td>
+<td>45</td>
+<td>12</td>
+<td>0.266667</td>
+<td>-0.133333</td>
+<td>Contested</td>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>socialism</td>
+<td>9</td>
+<td>3</td>
+<td>0.333333</td>
+<td>-0.111111</td>
+<td>Contested</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>immigration</td>
+<td>29</td>
+<td>3</td>
+<td>0.103448</td>
+<td>-0.034483</td>
+<td>Contested</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>climate</td>
+<td>6</td>
+<td>0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>Unknown</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>democracy</td>
+<td>6</td>
+<td>0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>Unknown</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>trump</td>
+<td>52</td>
+<td>7</td>
+<td>0.134615</td>
+<td>0.019231</td>
+<td>Contested</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>trans</td>
+<td>47</td>
+<td>2</td>
+<td>0.042553</td>
+<td>0.042553</td>
+<td>Neutral</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>woke</td>
+<td>41</td>
+<td>15</td>
+<td>0.365854</td>
+<td>0.048780</td>
+<td>Contested</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>race</td>
+<td>17</td>
+<td>2</td>
+<td>0.117647</td>
+<td>0.117647</td>
+<td>Neutral</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>right</td>
+<td>39</td>
+<td>17</td>
+<td>0.435897</td>
+<td>0.128205</td>
+<td>Contested</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>war</td>
+<td>55</td>
+<td>8</td>
+<td>0.145455</td>
+<td>0.145455</td>
+<td>Neutral</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>ukraine</td>
+<td>15</td>
+<td>4</td>
+<td>0.266667</td>
+<td>0.266667</td>
+<td>Right-leaning</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>gaza</td>
+<td>11</td>
+<td>3</td>
+<td>0.272727</td>
+<td>0.272727</td>
+<td>Right-leaning</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>biden</td>
+<td>9</td>
+<td>4</td>
+<td>0.444444</td>
+<td>0.444444</td>
+<td>Right-leaning</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>palestine</td>
+<td>19</td>
+<td>9</td>
+<td>0.473684</td>
+<td>0.473684</td>
+<td>Right-leaning</td>
+<td>9</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>left</td>
+<td>36</td>
+<td>14</td>
+<td>0.388889</td>
+<td>0.555556</td>
+<td>Right-leaning</td>
+<td>13</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:50.780302Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:50.780252Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:50.868632Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:50.868293Z&quot;}}" data-execution_count="21">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chart A: contextual term lean direction</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>plot_df <span class="op">=</span> context_lean_df.copy().sort_values(<span class="st">"context_lean_score"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>context_label_colors <span class="op">=</span> {</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Left-leaning"</span>: <span class="st">"#3B82F6"</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Contested"</span>: <span class="st">"#F59E0B"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Neutral"</span>: <span class="st">"#9CA3AF"</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Right-leaning"</span>: <span class="st">"#EF4444"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Unknown"</span>: <span class="st">"#6B7280"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="bu">max</span>(<span class="dv">6</span>, <span class="fl">0.35</span> <span class="op">*</span> <span class="bu">len</span>(plot_df))))</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [context_label_colors[label] <span class="cf">for</span> label <span class="kw">in</span> plot_df[<span class="st">"context_lean_label"</span>]]</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>ax.barh(plot_df[<span class="st">"term"</span>], plot_df[<span class="st">"context_lean_score"</span>], color<span class="op">=</span>colors, alpha<span class="op">=</span><span class="fl">0.9</span>)</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, lw<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Average context lean score (negative = left, positive = right)"</span>)</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Contextual-term leaning in video titles"</span>)</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>display(</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    plot_df[[</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"term"</span>,</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"titles_with_term"</span>,</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_evidence_titles"</span>,</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_evidence_share"</span>,</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_lean_score"</span>,</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"context_lean_label"</span>,</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>    ]]</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Chart B: all titles binned by leaning category</span></span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>label_order <span class="op">=</span> [<span class="st">"Left-leaning"</span>, <span class="st">"Contested"</span>, <span class="st">"Neutral"</span>, <span class="st">"Right-leaning"</span>, <span class="st">"Unknown"</span>]</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>label_colors <span class="op">=</span> {</span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Left-leaning"</span>: <span class="st">"#3B82F6"</span>,</span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Contested"</span>: <span class="st">"#F59E0B"</span>,</span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Neutral"</span>: <span class="st">"#9CA3AF"</span>,</span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Right-leaning"</span>: <span class="st">"#EF4444"</span>,</span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Unknown"</span>: <span class="st">"#6B7280"</span>,</span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>title_lean_counts <span class="op">=</span> (</span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">"title_lean_label"</span>]</span>
+<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>    .value_counts()</span>
+<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a>    .reindex(label_order, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a>    .rename_axis(<span class="st">"lean"</span>)</span>
+<span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">"count"</span>)</span>
+<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-51"><a href="#cb29-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-52"><a href="#cb29-52" aria-hidden="true" tabindex="-1"></a>display(title_lean_counts)</span>
+<span id="cb29-53"><a href="#cb29-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-54"><a href="#cb29-54" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb29-55"><a href="#cb29-55" aria-hidden="true" tabindex="-1"></a>ax.bar(</span>
+<span id="cb29-56"><a href="#cb29-56" aria-hidden="true" tabindex="-1"></a>    title_lean_counts[<span class="st">"lean"</span>],</span>
+<span id="cb29-57"><a href="#cb29-57" aria-hidden="true" tabindex="-1"></a>    title_lean_counts[<span class="st">"count"</span>],</span>
+<span id="cb29-58"><a href="#cb29-58" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>[label_colors[k] <span class="cf">for</span> k <span class="kw">in</span> title_lean_counts[<span class="st">"lean"</span>]],</span>
+<span id="cb29-59"><a href="#cb29-59" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-60"><a href="#cb29-60" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"All video titles by inferred political leaning"</span>)</span>
+<span id="cb29-61"><a href="#cb29-61" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Number of titles"</span>)</span>
+<span id="cb29-62"><a href="#cb29-62" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">""</span>)</span>
+<span id="cb29-63"><a href="#cb29-63" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(title_lean_counts[<span class="st">"count"</span>]):</span>
+<span id="cb29-64"><a href="#cb29-64" aria-hidden="true" tabindex="-1"></a>    ax.text(i, v <span class="op">+</span> <span class="bu">max</span>(title_lean_counts[<span class="st">"count"</span>]) <span class="op">*</span> <span class="fl">0.02</span>, <span class="ss">f"</span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"bottom"</span>)</span>
+<span id="cb29-65"><a href="#cb29-65" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb29-66"><a href="#cb29-66" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-word-frequency_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">term</th>
+<th data-quarto-table-cell-role="th">titles_with_term</th>
+<th data-quarto-table-cell-role="th">context_evidence_titles</th>
+<th data-quarto-table-cell-role="th">context_evidence_share</th>
+<th data-quarto-table-cell-role="th">context_lean_score</th>
+<th data-quarto-table-cell-role="th">context_lean_label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>feminism</td>
+<td>9</td>
+<td>4</td>
+<td>0.444444</td>
+<td>-0.444444</td>
+<td>Left-leaning</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>gender</td>
+<td>17</td>
+<td>2</td>
+<td>0.117647</td>
+<td>-0.176471</td>
+<td>Neutral</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>capitalism</td>
+<td>6</td>
+<td>1</td>
+<td>0.166667</td>
+<td>-0.166667</td>
+<td>Neutral</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>israel</td>
+<td>45</td>
+<td>12</td>
+<td>0.266667</td>
+<td>-0.133333</td>
+<td>Contested</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>socialism</td>
+<td>9</td>
+<td>3</td>
+<td>0.333333</td>
+<td>-0.111111</td>
+<td>Contested</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>immigration</td>
+<td>29</td>
+<td>3</td>
+<td>0.103448</td>
+<td>-0.034483</td>
+<td>Contested</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>climate</td>
+<td>6</td>
+<td>0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>Unknown</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>democracy</td>
+<td>6</td>
+<td>0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>Unknown</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>trump</td>
+<td>52</td>
+<td>7</td>
+<td>0.134615</td>
+<td>0.019231</td>
+<td>Contested</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>trans</td>
+<td>47</td>
+<td>2</td>
+<td>0.042553</td>
+<td>0.042553</td>
+<td>Neutral</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>woke</td>
+<td>41</td>
+<td>15</td>
+<td>0.365854</td>
+<td>0.048780</td>
+<td>Contested</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>race</td>
+<td>17</td>
+<td>2</td>
+<td>0.117647</td>
+<td>0.117647</td>
+<td>Neutral</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>right</td>
+<td>39</td>
+<td>17</td>
+<td>0.435897</td>
+<td>0.128205</td>
+<td>Contested</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>war</td>
+<td>55</td>
+<td>8</td>
+<td>0.145455</td>
+<td>0.145455</td>
+<td>Neutral</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>ukraine</td>
+<td>15</td>
+<td>4</td>
+<td>0.266667</td>
+<td>0.266667</td>
+<td>Right-leaning</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>gaza</td>
+<td>11</td>
+<td>3</td>
+<td>0.272727</td>
+<td>0.272727</td>
+<td>Right-leaning</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>biden</td>
+<td>9</td>
+<td>4</td>
+<td>0.444444</td>
+<td>0.444444</td>
+<td>Right-leaning</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>palestine</td>
+<td>19</td>
+<td>9</td>
+<td>0.473684</td>
+<td>0.473684</td>
+<td>Right-leaning</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>left</td>
+<td>36</td>
+<td>14</td>
+<td>0.388889</td>
+<td>0.555556</td>
+<td>Right-leaning</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">lean</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Left-leaning</td>
+<td>160</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Contested</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Neutral</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Right-leaning</td>
+<td>186</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Unknown</td>
+<td>1476</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02-word-frequency_files/figure-html/cell-22-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>

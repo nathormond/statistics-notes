@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="setup-preprocessing" class="level2">
 <h2 class="anchored" data-anchor-id="setup-preprocessing">0 — Setup &amp; preprocessing</h2>
-<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:08.366274Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:08.366086Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:09.820141Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:09.819640Z&quot;}}" data-execution_count="1">
+<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:57.908480Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:57.908308Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.014285Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.013869Z&quot;}}" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">14</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:09.822310Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:09.822055Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:09.850658Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:09.850158Z&quot;}}" data-execution_count="2">
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.015578Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.015465Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.035316Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.034922Z&quot;}}" data-execution_count="2">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>DATA_PATH <span class="op">=</span> <span class="st">"../../../../data/TRIGGERnometry-video-taxonomy/trigggerpod.csv"</span></span>
@@ -272,7 +272,7 @@ Date range: 2018-04-23 → 2026-03-01
 Null descriptions: 127</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:09.867563Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:09.867468Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:09.870920Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:09.870445Z&quot;}}" data-execution_count="3">
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.048221Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.048142Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.051140Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.050785Z&quot;}}" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Text-cleaning helpers (reused from notebook 02) ---</span></span>
@@ -310,7 +310,7 @@ Null descriptions: 127</code></pre>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [t <span class="cf">for</span> t <span class="kw">in</span> tokens <span class="cf">if</span> <span class="bu">len</span>(t) <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">and</span> t <span class="kw">not</span> <span class="kw">in</span> ALL_STOPS]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:09.872070Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:09.871992Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:09.880925Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:09.880190Z&quot;}}" data-execution_count="4">
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.052089Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.052039Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.059838Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.059505Z&quot;}}" data-execution_count="4">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- NEW: description boilerplate stripper ---</span></span>
@@ -354,7 +354,7 @@ Null descriptions: 127</code></pre>
 Videos with boilerplate-only / empty description: 1,295</code></pre>
 </div>
 </div>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:09.882174Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:09.882082Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:09.966846Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:09.966546Z&quot;}}" data-execution_count="5">
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.060776Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.060716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.142050Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.141735Z&quot;}}" data-execution_count="5">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pre-compute token columns</span></span>
@@ -378,7 +378,7 @@ Videos with boilerplate-only / empty description: 1,295</code></pre>
 </section>
 <section id="topic-classification" class="level2">
 <h2 class="anchored" data-anchor-id="topic-classification">1 — Topic classification</h2>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:09.967955Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:09.967890Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:09.970734Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:09.970323Z&quot;}}" data-execution_count="6">
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.143103Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.143043Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.145697Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.145425Z&quot;}}" data-execution_count="6">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TOPIC_KEYWORDS <span class="op">=</span> {</span>
@@ -455,7 +455,7 @@ Videos with boilerplate-only / empty description: 1,295</code></pre>
 <span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:09.971634Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:09.971581Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.031129Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.030759Z&quot;}}" data-execution_count="7">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.146549Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.146500Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.204094Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.203693Z&quot;}}" data-execution_count="7">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classify_topics(row):</span>
@@ -487,7 +487,7 @@ Uncategorised (0 topics): 797 (43.1%)
 Multi-topic (≥2):      476 (25.7%)</code></pre>
 </div>
 </div>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.032040Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.031979Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.040280Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.039890Z&quot;}}" data-execution_count="8">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.205066Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.205012Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.210267Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.209926Z&quot;}}" data-execution_count="8">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Topic prevalence table</span></span>
@@ -598,7 +598,7 @@ Multi-topic (≥2):      476 (25.7%)</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.041169Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.041119Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.124371Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.123995Z&quot;}}" data-execution_count="9">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.211152Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.211102Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.280727Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.280371Z&quot;}}" data-execution_count="9">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart — topic prevalence</span></span>
@@ -620,7 +620,7 @@ Multi-topic (≥2):      476 (25.7%)</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.125473Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.125406Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.338395Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.337987Z&quot;}}" data-execution_count="10">
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.281765Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.281694Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.494127Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.493739Z&quot;}}" data-execution_count="10">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Topic co-occurrence heatmap</span></span>
@@ -652,7 +652,7 @@ Multi-topic (≥2):      476 (25.7%)</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.339398Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.339340Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.705604Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.705267Z&quot;}}" data-execution_count="11">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.495075Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.495020Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.853942Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.853524Z&quot;}}" data-execution_count="11">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Topic prevalence over time (small multiples)</span></span>
@@ -692,7 +692,7 @@ Multi-topic (≥2):      476 (25.7%)</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.706587Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.706523Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.712317Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.711952Z&quot;}}" data-execution_count="12">
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.854857Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.854798Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.860298Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.859935Z&quot;}}" data-execution_count="12">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Audit: sample of uncategorised videos</span></span>
@@ -858,7 +858,7 @@ Multi-topic (≥2):      476 (25.7%)</code></pre>
 <p>A contested term used critically → right-leaning framing (+1)<br>
 A contested term used approvingly → left-leaning framing (−1)<br>
 A contested term with no clear signal → <strong>ambiguous</strong> (scored 0, flagged for review)</p>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.713346Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.713288Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.716245Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.715832Z&quot;}}" data-execution_count="13">
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.861176Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.861125Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.863759Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.863468Z&quot;}}" data-execution_count="13">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Tier 1: Unambiguous right-framing terms ──────────────────────────</span></span>
@@ -941,7 +941,7 @@ Critique markers:           44
 Endorsement markers:        12</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.717101Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.717050Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.856624Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.856234Z&quot;}}" data-execution_count="14">
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.864614Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.864566Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:21:59.997512Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:21:59.997163Z&quot;}}" data-execution_count="14">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_context(text, term, window<span class="op">=</span>CTX_WINDOW):</span>
@@ -1072,7 +1072,7 @@ Videos with ambiguous contested terms: 9
 Videos with no framing signals:        1,708</code></pre>
 </div>
 </div>
-<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.857590Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.857531Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:10.900658Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:10.900254Z&quot;}}" data-execution_count="15">
+<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:21:59.998435Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:21:59.998377Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.036659Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.036264Z&quot;}}" data-execution_count="15">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Framing score distribution</span></span>
@@ -1095,7 +1095,7 @@ Videos with no framing signals:        1,708</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:10.901667Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:10.901608Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.018968Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.018567Z&quot;}}" data-execution_count="16">
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.037623Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.037566Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.148863Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.148463Z&quot;}}" data-execution_count="16">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Most common framing terms by tier and direction</span></span>
@@ -1158,7 +1158,7 @@ Videos with no framing signals:        1,708</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.020007Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.019942Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.040990Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.040541Z&quot;}}" data-execution_count="17">
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.149883Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.149827Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.168849Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.168468Z&quot;}}" data-execution_count="17">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show all Tier 2 matches with their context and classification</span></span>
@@ -1279,7 +1279,7 @@ AMBIGUOUS (0): 9 matches
 <section id="contextual-evidence-audit" class="level3">
 <h3 class="anchored" data-anchor-id="contextual-evidence-audit">Contextual evidence audit</h3>
 <p>Show the classification reasoning for every Tier 2 contested term match, so we can verify the context-detection is working correctly.</p>
-<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.042538Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.042436Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.158244Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.157848Z&quot;}}" data-execution_count="18">
+<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.169786Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.169721Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.271971Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.271571Z&quot;}}" data-execution_count="18">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Framing score by topic (box plot)</span></span>
@@ -1307,7 +1307,7 @@ AMBIGUOUS (0): 9 matches
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_4328/1342993636.py:17: FutureWarning: 
+<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_97890/1342993636.py:17: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
 
@@ -1321,7 +1321,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 </div>
-<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.159242Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.159178Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.232366Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.232065Z&quot;}}" data-execution_count="19">
+<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.272848Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.272791Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.341967Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.341607Z&quot;}}" data-execution_count="19">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Framing score trend over time (rolling 90-day mean)</span></span>
@@ -1360,7 +1360,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </li>
 <li><strong>Cleaned description</strong> (often empty for shorts) — weight <strong>0.3</strong> (or 0.0 when empty)</li>
 </ul>
-<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.233421Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.233369Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.388162Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.387715Z&quot;}}" data-execution_count="20">
+<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.342911Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.342857Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.499767Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.499411Z&quot;}}" data-execution_count="20">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sia <span class="op">=</span> SentimentIntensityAnalyzer()</span>
@@ -1397,7 +1397,7 @@ max         0.856
 Name: vader_composite, dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.389140Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.389068Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.543851Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.543300Z&quot;}}" data-execution_count="21">
+<div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.500870Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.500801Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.636243Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.635890Z&quot;}}" data-execution_count="21">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># VADER distributions</span></span>
@@ -1429,7 +1429,7 @@ Name: vader_composite, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.545062Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.544980Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.653037Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.652639Z&quot;}}" data-execution_count="22">
+<div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.637234Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.637174Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.736424Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.735999Z&quot;}}" data-execution_count="22">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># VADER by topic</span></span>
@@ -1456,7 +1456,7 @@ Name: vader_composite, dtype: float64</code></pre>
 <span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_4328/833835459.py:16: FutureWarning: 
+<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_97890/833835459.py:16: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
 
@@ -1470,7 +1470,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 </div>
-<div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.654071Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.654012Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.702763Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.702441Z&quot;}}" data-execution_count="23">
+<div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.737288Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.737233Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.787219Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.786843Z&quot;}}" data-execution_count="23">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># VADER vs framing score scatter</span></span>
@@ -1492,7 +1492,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 </div>
-<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.703887Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.703824Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.764185Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.763890Z&quot;}}" data-execution_count="24">
+<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.788087Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.788035Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.846940Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.846542Z&quot;}}" data-execution_count="24">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sentiment over time (rolling 90-day median)</span></span>
@@ -1520,7 +1520,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <section id="contextual-word-analysis-pmi" class="level2">
 <h2 class="anchored" data-anchor-id="contextual-word-analysis-pmi">4 — Contextual word analysis (PMI)</h2>
 <p>Pointwise Mutual Information measures how much more likely two words are to co-occur within a sliding window than by chance. This reveals what words cluster near politically charged anchor terms in video titles.</p>
-<div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.765229Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.765172Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.780819Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.780525Z&quot;}}" data-execution_count="25">
+<div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.847905Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.847842Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.862743Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.862447Z&quot;}}" data-execution_count="25">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ANCHOR_WORDS <span class="op">=</span> [</span>
@@ -1556,7 +1556,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Total co-occurrence pairs: 42,532</code></pre>
 </div>
 </div>
-<div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.781676Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.781627Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:11.784039Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:11.783667Z&quot;}}" data-execution_count="26">
+<div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.863617Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.863565Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:00.865976Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:00.865611Z&quot;}}" data-execution_count="26">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pmi(word_a, word_b):</span>
@@ -1588,7 +1588,7 @@ Total co-occurrence pairs: 42,532</code></pre>
 <pre><code>Anchors with results: 15</code></pre>
 </div>
 </div>
-<div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:11.784847Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:11.784800Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.204501Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.204179Z&quot;}}" data-execution_count="27">
+<div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:00.866869Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:00.866816Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.264274Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.263973Z&quot;}}" data-execution_count="27">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PMI bar charts (small multiples)</span></span>
@@ -1632,52 +1632,81 @@ Total co-occurrence pairs: 42,532</code></pre>
 </section>
 <section id="combined-profile-csv-export" class="level2">
 <h2 class="anchored" data-anchor-id="combined-profile-csv-export">5 — Combined profile &amp; CSV export</h2>
-<div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.205881Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.205801Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.208692Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.208330Z&quot;}}" data-execution_count="28">
+<div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.265460Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.265388Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.274638Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.274208Z&quot;}}" data-execution_count="28">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign framing labels</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> framing_label(score):</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"right-leaning"</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> score <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"left-leaning"</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"unknown"</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"framing_label"</span>] <span class="op">=</span> df[<span class="st">"framing_score"</span>].<span class="bu">apply</span>(framing_label)</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>label_counts <span class="op">=</span> df[<span class="st">"framing_label"</span>].value_counts()</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Framing label distribution:"</span>)</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, count <span class="kw">in</span> label_counts.items():</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>label<span class="sc">:20s}</span><span class="ss"> </span><span class="sc">{</span>count<span class="sc">:&gt;5,}</span><span class="ss">  (</span><span class="sc">{</span>count<span class="op">/</span><span class="bu">len</span>(df)<span class="sc">:.1%}</span><span class="ss">)"</span>)</span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'→ </span><span class="sc">{</span>label_counts<span class="sc">.</span>get(<span class="st">"unknown"</span>, <span class="dv">0</span>)<span class="sc">:,}</span><span class="ss"> videos labelled "unknown" — candidates for qualitative thumbnail / manual analysis'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> framing_label(row):</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Unknown   = no framing terms matched at all (no signal).</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Contested = politically loaded Tier 2 terms present, but direction unclear (ambiguous context).</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Neutral   = right and left framing terms both found and cancel out (balanced framing).</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> row[<span class="st">"framing_score"</span>]</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    right_count <span class="op">=</span> row[<span class="st">"framing_right_count"</span>]</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    left_count <span class="op">=</span> row[<span class="st">"framing_left_count"</span>]</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    ambiguous_count <span class="op">=</span> row[<span class="st">"framing_ambiguous_count"</span>]</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"right-leaning"</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> score <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"left-leaning"</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># score == 0: discriminate unknown / contested / neutral</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> right_count <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> left_count <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"neutral"</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ambiguous_count <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"contested"</span></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"unknown"</span></span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"framing_label"</span>] <span class="op">=</span> df.<span class="bu">apply</span>(framing_label, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>label_counts <span class="op">=</span> df[<span class="st">"framing_label"</span>].value_counts()</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Framing label distribution:"</span>)</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, count <span class="kw">in</span> label_counts.items():</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>label<span class="sc">:20s}</span><span class="ss"> </span><span class="sc">{</span>count<span class="sc">:&gt;5,}</span><span class="ss">  (</span><span class="sc">{</span>count<span class="op">/</span><span class="bu">len</span>(df)<span class="sc">:.1%}</span><span class="ss">)"</span>)</span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>unknown_n <span class="op">=</span> label_counts.get(<span class="st">"unknown"</span>, <span class="dv">0</span>)</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>contested_n <span class="op">=</span> label_counts.get(<span class="st">"contested"</span>, <span class="dv">0</span>)</span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>neutral_n <span class="op">=</span> label_counts.get(<span class="st">"neutral"</span>, <span class="dv">0</span>)</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'→ </span><span class="sc">{</span>unknown_n<span class="sc">:,}</span><span class="ss"> "unknown" (no signal) — candidates for qualitative thumbnail / manual analysis'</span>)</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'→ </span><span class="sc">{</span>contested_n<span class="sc">:,}</span><span class="ss"> "contested" (ambiguous Tier 2 terms, direction unclear)'</span>)</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'→ </span><span class="sc">{</span>neutral_n<span class="sc">:,}</span><span class="ss"> "neutral" (balanced left/right framing terms)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Framing label distribution:
-  unknown              1,716  (92.8%)
+  unknown              1,708  (92.4%)
   right-leaning          133  (7.2%)
+  contested                8  (0.4%)
 
-→ 1,716 videos labelled "unknown" — candidates for qualitative thumbnail / manual analysis</code></pre>
+→ 1,708 "unknown" (no signal) — candidates for qualitative thumbnail / manual analysis
+→ 8 "contested" (ambiguous Tier 2 terms, direction unclear)
+→ 0 "neutral" (balanced left/right framing terms)</code></pre>
 </div>
 </div>
-<div id="cell-37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.209609Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.209545Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.258831Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.258457Z&quot;}}" data-execution_count="29">
+<div id="cell-37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.275522Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.275470Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.331529Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.331195Z&quot;}}" data-execution_count="29">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Framing label by year (stacked bar)</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">"year"</span>], df[<span class="st">"framing_label"</span>], normalize<span class="op">=</span><span class="st">"index"</span>) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>colour_map <span class="op">=</span> {<span class="st">"right-leaning"</span>: <span class="st">"steelblue"</span>, <span class="st">"left-leaning"</span>: <span class="st">"coral"</span>, <span class="st">"unknown"</span>: <span class="st">"lightgrey"</span>}</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>plot_order <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> [<span class="st">"right-leaning"</span>, <span class="st">"unknown"</span>, <span class="st">"left-leaning"</span>] <span class="cf">if</span> c <span class="kw">in</span> ct.columns]</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>ct[plot_order].plot(kind<span class="op">=</span><span class="st">"bar"</span>, stacked<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax,</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span>[colour_map[c] <span class="cf">for</span> c <span class="kw">in</span> plot_order], width<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f videos"</span>)</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Framing label distribution by year"</span>)</span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">"Framing"</span>)</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>colour_map <span class="op">=</span> {</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"right-leaning"</span>: <span class="st">"steelblue"</span>,</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"left-leaning"</span>: <span class="st">"coral"</span>,</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"contested"</span>: <span class="st">"#F59E0B"</span>,</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"neutral"</span>: <span class="st">"#9CA3AF"</span>,</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"unknown"</span>: <span class="st">"lightgrey"</span>,</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>plot_order <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> [<span class="st">"right-leaning"</span>, <span class="st">"contested"</span>, <span class="st">"neutral"</span>, <span class="st">"unknown"</span>, <span class="st">"left-leaning"</span>] <span class="cf">if</span> c <span class="kw">in</span> ct.columns]</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>ct[plot_order].plot(kind<span class="op">=</span><span class="st">"bar"</span>, stacked<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span>[colour_map[c] <span class="cf">for</span> c <span class="kw">in</span> plot_order], width<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f videos"</span>)</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Framing label distribution by year"</span>)</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">"Framing"</span>)</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1687,34 +1716,35 @@ Total co-occurrence pairs: 42,532</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-38" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.259815Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.259758Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.587411Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.586961Z&quot;}}" data-execution_count="30">
+<div id="cell-38" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.332563Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.332511Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.607453Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.607019Z&quot;}}" data-execution_count="30">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Engagement vs framing</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">5</span>))</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, col <span class="kw">in</span> <span class="bu">zip</span>(axes, [<span class="st">"view_count"</span>, <span class="st">"like_count"</span>, <span class="st">"comment_count"</span>]):</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"framing_label"</span>, y<span class="op">=</span>col, ax<span class="op">=</span>ax,</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                order<span class="op">=</span>[<span class="st">"right-leaning"</span>, <span class="st">"unknown"</span>, <span class="st">"left-leaning"</span>],</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                order<span class="op">=</span>[<span class="st">"right-leaning"</span>, <span class="st">"contested"</span>, <span class="st">"neutral"</span>, <span class="st">"unknown"</span>, <span class="st">"left-leaning"</span>],</span>
 <span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                palette<span class="op">=</span>colour_map)</span>
 <span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    ax.set_yscale(<span class="st">"log"</span>)</span>
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    ax.set_title(col)</span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">""</span>)</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Engagement by framing label (log scale)"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    ax.tick_params(axis<span class="op">=</span><span class="st">"x"</span>, rotation<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Engagement by framing label (log scale)"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_4328/595485343.py:4: FutureWarning: 
+<pre><code>/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_97890/1075369793.py:4: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(data=df, x="framing_label", y=col, ax=ax,
-/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_4328/595485343.py:4: FutureWarning: 
+/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_97890/1075369793.py:4: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(data=df, x="framing_label", y=col, ax=ax,
-/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_4328/595485343.py:4: FutureWarning: 
+/var/folders/r9/gmqzlhhd67vdxkgnkq05lj6h0000gn/T/ipykernel_97890/1075369793.py:4: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
@@ -1728,7 +1758,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 </div>
-<div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.588392Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.588334Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.598914Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.598529Z&quot;}}" data-execution_count="31">
+<div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.608309Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.608251Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.618757Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.618370Z&quot;}}" data-execution_count="31">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary table per topic</span></span>
@@ -1890,7 +1920,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 </div>
-<div id="cell-40" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.599779Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.599727Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.632401Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.632033Z&quot;}}" data-execution_count="32">
+<div id="cell-40" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.619654Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.619602Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.650197Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.649813Z&quot;}}" data-execution_count="32">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Export classified CSV ---</span></span>
@@ -1922,15 +1952,21 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>export_df[export_cols].to_csv(OUT_PATH, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>unknown_count <span class="op">=</span> (export_df[<span class="st">"framing_label"</span>] <span class="op">==</span> <span class="st">"unknown"</span>).<span class="bu">sum</span>()</span>
-<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Exported </span><span class="sc">{</span><span class="bu">len</span>(export_df)<span class="sc">:,}</span><span class="ss"> rows to </span><span class="sc">{</span>OUT_PATH<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  → </span><span class="sc">{</span>unknown_count<span class="sc">:,}</span><span class="ss"> rows labelled 'unknown' — ready for qualitative analysis (thumbnails, manual review)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a>contested_count <span class="op">=</span> (export_df[<span class="st">"framing_label"</span>] <span class="op">==</span> <span class="st">"contested"</span>).<span class="bu">sum</span>()</span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>neutral_count <span class="op">=</span> (export_df[<span class="st">"framing_label"</span>] <span class="op">==</span> <span class="st">"neutral"</span>).<span class="bu">sum</span>()</span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Exported </span><span class="sc">{</span><span class="bu">len</span>(export_df)<span class="sc">:,}</span><span class="ss"> rows to </span><span class="sc">{</span>OUT_PATH<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  → </span><span class="sc">{</span>unknown_count<span class="sc">:,}</span><span class="ss"> "unknown" (no framing signal)'</span>)</span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  → </span><span class="sc">{</span>contested_count<span class="sc">:,}</span><span class="ss"> "contested" (ambiguous Tier 2 terms)'</span>)</span>
+<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  → </span><span class="sc">{</span>neutral_count<span class="sc">:,}</span><span class="ss"> "neutral" (balanced left/right framing)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Exported 1,849 rows to ../../../../data/TRIGGERnometry-video-taxonomy/trigggerpod-classified.csv
-  → 1,716 rows labelled 'unknown' — ready for qualitative analysis (thumbnails, manual review)</code></pre>
+  → 1,708 "unknown" (no framing signal)
+  → 8 "contested" (ambiguous Tier 2 terms)
+  → 0 "neutral" (balanced left/right framing)</code></pre>
 </div>
 </div>
-<div id="cell-41" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.633378Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.633318Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.637890Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.637575Z&quot;}}" data-execution_count="33">
+<div id="cell-41" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.651300Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.651225Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.656222Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.655672Z&quot;}}" data-execution_count="33">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 10 most left-framed videos</span></span>
@@ -2045,7 +2081,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 </div>
-<div id="cell-42" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.638913Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.638854Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.666524Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.666209Z&quot;}}" data-execution_count="34">
+<div id="cell-42" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.657294Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.657224Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.687577Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.687175Z&quot;}}" data-execution_count="34">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Export classified CSV ---</span></span>
@@ -2075,12 +2111,18 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>export_df[export_cols].to_csv(OUT_PATH, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>unknown_count <span class="op">=</span> (export_df[<span class="st">"framing_label"</span>] <span class="op">==</span> <span class="st">"unknown"</span>).<span class="bu">sum</span>()</span>
-<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Exported </span><span class="sc">{</span><span class="bu">len</span>(export_df)<span class="sc">:,}</span><span class="ss"> rows to </span><span class="sc">{</span>OUT_PATH<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  → </span><span class="sc">{</span>unknown_count<span class="sc">:,}</span><span class="ss"> rows labelled 'unknown' — ready for qualitative analysis (thumbnails, manual review)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>contested_count <span class="op">=</span> (export_df[<span class="st">"framing_label"</span>] <span class="op">==</span> <span class="st">"contested"</span>).<span class="bu">sum</span>()</span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>neutral_count <span class="op">=</span> (export_df[<span class="st">"framing_label"</span>] <span class="op">==</span> <span class="st">"neutral"</span>).<span class="bu">sum</span>()</span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Exported </span><span class="sc">{</span><span class="bu">len</span>(export_df)<span class="sc">:,}</span><span class="ss"> rows to </span><span class="sc">{</span>OUT_PATH<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  → </span><span class="sc">{</span>unknown_count<span class="sc">:,}</span><span class="ss"> "unknown" (no framing signal)'</span>)</span>
+<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  → </span><span class="sc">{</span>contested_count<span class="sc">:,}</span><span class="ss"> "contested" (ambiguous Tier 2 terms)'</span>)</span>
+<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  → </span><span class="sc">{</span>neutral_count<span class="sc">:,}</span><span class="ss"> "neutral" (balanced left/right framing)'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Exported 1,849 rows to ../../../../data/TRIGGERnometry-video-taxonomy/trigggerpod-classified.csv
-  → 1,716 rows labelled 'unknown' — ready for qualitative analysis (thumbnails, manual review)</code></pre>
+  → 1,708 "unknown" (no framing signal)
+  → 8 "contested" (ambiguous Tier 2 terms)
+  → 0 "neutral" (balanced left/right framing)</code></pre>
 </div>
 </div>
 <section id="methodological-limitations" class="level3">
@@ -2102,7 +2144,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li>Guest-name extraction and political affiliation mapping</li>
 <li>Cross-referencing framing scores with engagement to test audience–framing feedback loops</li>
 </ul>
-<div id="cell-44" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T14:46:12.667458Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T14:46:12.667405Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T14:46:12.852350Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T14:46:12.851916Z&quot;}}" data-execution_count="35">
+<div id="cell-44" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-03-01T16:22:01.688608Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-03-01T16:22:01.688544Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-03-01T16:22:01.908956Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-03-01T16:22:01.908528Z&quot;}}" data-execution_count="35">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary dashboard — 2x2 grid</span></span>
