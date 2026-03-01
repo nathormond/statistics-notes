@@ -6,3 +6,9 @@ dependencies:
   - pip:
       - google-api-python-client
       - python-dotenv
+      - pandas
+      - matplotlib
+      - seaborn
+      - nltk
+      - wordcloud
+      - scikit-learn
