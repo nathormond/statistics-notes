@@ -26,6 +26,13 @@ Thumbs.db
 
 **/*.quarto_ipynb
 
+# Environment secrets
+.env
+
+# Conda environments
+envs/
+.conda/
+
 # Large data files (uncomment if needed)
 # data/*/raw/*.sqlite
 # data/*/raw/*.db

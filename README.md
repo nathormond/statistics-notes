@@ -138,7 +138,21 @@ To get started, follow these steps in your R console:
     ```
     Commit the updated `renv.lock` file to your Git repository.
 
-### 3. Verify Setup
+### 3. Python Environment (for utility scripts)
+
+Some helper scripts under `scripts/utils/` are written in Python. A conda environment is provided **scoped to those scripts** (kept separate from the Quarto/R setup to avoid conflicts).
+
+```bash
+# Create the environment (one-time)
+conda env create -f scripts/utils/yt-channel-data/environment.yml
+
+# Activate it
+conda activate stats-notes-python
+```
+
+The environment only needs to be active when running Python utility scripts — it is not required for Quarto rendering or R workflows.
+
+### 4. Verify Setup
 
 Test that everything is working:
 
