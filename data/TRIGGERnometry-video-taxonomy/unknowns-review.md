@@ -25,7 +25,6 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2026-01-28 | Jeremy Boreing On Candace Owens, Tucker Carlson and Nick Fuentes | nan | 0.00 |  | trump_and_us_politics |
 | 2026-01-24 | The Consequences Are Here | nan | 0.00 |  |  |
 | 2026-01-23 | Why We Must Draw Moral Lines | nan | 0.00 |  |  |
-| 2026-01-22 | LIVE Davos Breakdown with Presidential Advisor Dr Pippa Malmgren | Presidential Advisor Dr Pippa Malmgren | 0.00 |  | trump_and_us_politics, russia_ukraine_geopolitics, economy_and_cost_of_living |
 | 2026-01-21 | Why Political Violence Is Rising | nan | 0.00 |  |  |
 | 2026-01-20 | When Comics Start Policing Comics | nan | 0.00 |  | crime_and_policing |
 | 2026-01-20 | Why Reform Has No Choice - Konstantin Kisin | nan | 0.00 |  | uk_politics |
@@ -67,7 +66,6 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-10-28 | Careful What You Click On - Konstantin Kisin | nan | 0.00 |  |  |
 | 2025-10-27 | Why Have So Many Americans Become Conspiratorial? | nan | 0.00 |  |  |
 | 2025-10-26 | A Mindset We Can’t Understand | nan | 0.00 |  |  |
-| 2025-10-24 | Dinesh D'Souza Calls Out Tucker and Candace Owens | nan | 0.00 |  | woke_and_cancel_culture, israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics |
 | 2025-10-24 | “Half the calls we get aren’t crime, they’re mental health crises.” - Jay Darkmoore | Jay Darkmoore | 0.00 |  | crime_and_policing |
 | 2025-10-22 | We’re Back In The US 🇺🇸 | nan | 0.00 |  |  |
 | 2025-10-21 | It's Hard To See How A Ceasefire Will Hold While Hamas Is In Power. | nan | 0.00 |  | israel_and_middle_east |
@@ -108,12 +106,11 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-09-16 | I Fear For The Entire Next Generation Of Our Kids | nan | 0.00 |  |  |
 | 2025-09-16 | Why is Britain Heading for Financial Meltdown? | nan | 0.00 |  | uk_politics |
 | 2025-09-15 | On the Ground Report From Tommy Robinson Rally - Konstantin Kisin | nan | 0.00 |  |  |
-| 2025-09-12 | Stop Calling Everyone You Disagree With Nazis | Nazis | 0.00 |  |  |
+| 2025-09-12 | Stop Calling Everyone You Disagree With Nazis | nan | 0.00 |  |  |
 | 2025-09-12 | Who Do You Want Around You When You Are Dying? | nan | 0.00 |  |  |
 | 2025-09-12 | Charlie Kirk's Murder is a Tragedy For All of Us | nan | 0.00 |  |  |
 | 2025-09-11 | Charlie Kirk's Murder is a Tragedy For All of Us - Konstantin Kisin | nan | 0.00 |  |  |
 | 2025-09-11 | Iain Dale shares why he decided to write his book on Margaret Thatcher | nan | 0.00 |  |  |
-| 2025-09-10 | The Technology War You Don’t Know About - Declan Ganley | Declan Ganley | 0.00 |  | covid_and_pandemic, free_speech_and_censorship, russia_ukraine_geopolitics, culture_war_general |
 | 2025-09-08 | Historian Tom Holland: Islam, Christianity & the West | Historian Tom Holland | 0.00 |  | islam_and_extremism |
 | 2025-09-08 | How the Cross Became Christianity’s Symbol of Triumph | nan | 0.00 |  |  |
 | 2025-09-07 | Historian Tom Holland: Islam, Christianity & the West | Historian Tom Holland | 0.00 |  | free_speech_and_censorship, islam_and_extremism, uk_politics, culture_war_general |
@@ -122,7 +119,6 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-09-04 | Have You Had Too Much to Think? - Konstantin Kisin | nan | 0.00 |  | free_speech_and_censorship, uk_politics, crime_and_policing |
 | 2025-09-01 | Careful What You Click On - Konstantin Kisin | nan | 0.00 |  |  |
 | 2025-09-01 | The Double Standard No One Talks About | nan | 0.00 |  |  |
-| 2025-08-31 | “Children are not born in the wrong body.” – Lois McLatchie Miller | Lois McLatchie Miller | 0.00 |  |  |
 | 2025-08-29 | Responding to Netanyahu Interview Critics | nan | 0.00 |  | islam_and_extremism, israel_and_middle_east, trump_and_us_politics, uk_politics, russia_ukraine_geopolitics, culture_war_general |
 | 2025-08-25 | The real costs of educating a child refugee | nan | 0.00 |  | immigration_and_borders |
 | 2025-08-22 | Wake Before It’s Too Late | nan | 0.00 |  |  |
@@ -134,8 +130,6 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-08-07 | Those who say they oppose "hate speech" sure don’t like having their arguments questioned, do they? | nan | 0.00 |  | free_speech_and_censorship |
 | 2025-08-06 | How do you combat an extremist ideology that glorifies martyrdom? | nan | 0.00 |  | islam_and_extremism |
 | 2025-08-05 | Our discussion with Piers about whether Israel's bombing of Gaza has been "indiscriminate" | nan | 0.00 |  | israel_and_middle_east |
-| 2025-08-04 | Piers Morgan on his controversial interview with Natasha Hausdorff | Piers Morgan | 0.00 |  |  |
-| 2025-08-03 | “Israel has gone too far.” – Piers Morgan | Piers Morgan | 0.00 |  | israel_and_middle_east |
 | 2025-08-01 | Understanding history means confronting uncomfortable truths, not rewriting them | nan | 0.00 |  | uk_politics |
 | 2025-07-31 | "You don’t facilitate polio vaccines for nearly every child in Gaza if you're out to destroy them." | nan | 0.00 |  | covid_and_pandemic, israel_and_middle_east |
 | 2025-07-31 | "It needs to end." - Andrew Fox | Andrew Fox | 0.00 |  |  |
@@ -171,22 +165,18 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-07-01 | Why is SOCIALISM popular? ⤴️ | nan | 0.00 |  | economy_and_cost_of_living |
 | 2025-06-30 | The TRUTH is messy | nan | 0.00 |  |  |
 | 2025-06-29 | The Era of Peace is Over - Ex-CIA Agent | Ex-CIA Agent | 0.00 |  | free_speech_and_censorship, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics, crime_and_policing |
-| 2025-06-27 | Ex CIA Agent: The Real War is Just Beginning - Andrew Bustamante | Andrew Bustamante | 0.00 |  | free_speech_and_censorship, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics, crime_and_policing |
 | 2025-06-27 | Should Experts Know the Region They're Discussing? | nan | 0.00 |  |  |
 | 2025-06-26 | KONSTANTIN on Israel vs Iran | nan | 0.00 |  | israel_and_middle_east |
 | 2025-06-26 | Glenn Greenwald on Iran and Israel | Glenn Greenwald | 0.00 |  | israel_and_middle_east |
 | 2025-06-25 | AI is the new nuclear weapon | nan | 0.00 |  | russia_ukraine_geopolitics |
 | 2025-06-23 | The Untold Story of Iran-Iraq’s Child Soldiers | nan | 0.00 |  | israel_and_middle_east, uk_politics |
-| 2025-06-22 | The HORRIBLE Truth About Iran the West Doesn't Understand - Matthew Syed | Matthew Syed | 0.00 |  | israel_and_middle_east, russia_ukraine_geopolitics |
 | 2025-06-20 | From Proxy War to Direct Strike | nan | 0.00 |  |  |
 | 2025-06-20 | If this is what Iran’s regime does to its own children, imagine what they’d do to Israel with nukes | nan | 0.00 |  | israel_and_middle_east |
 | 2025-06-20 | Israel vs Iran | nan | 0.00 |  | israel_and_middle_east |
-| 2025-06-20 | Israel vs Iran - Matthew Syed | Matthew Syed | 0.00 |  | free_speech_and_censorship, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, uk_politics, russia_ukraine_geopolitics, crime_and_policing |
 | 2025-06-19 | Iran is the head of the octopus behind Israel’s seven-front war | nan | 0.00 |  | israel_and_middle_east, uk_politics |
 | 2025-06-18 | Weakness invites war | nan | 0.00 |  |  |
 | 2025-06-18 | Why I’m More Skeptical of Scientific Announcements Than Ever | nan | 0.00 |  |  |
 | 2025-06-17 | Why Iran Wants Israel Gone | nan | 0.00 |  | israel_and_middle_east |
-| 2025-06-16 | Why Israel Attacked Iran - Elica Le Bon | Elica Le Bon | 0.00 |  | israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics |
 | 2025-06-16 | Why Israel Attacked Iran | nan | 0.00 |  | israel_and_middle_east, russia_ukraine_geopolitics |
 | 2025-06-13 | Roseanne Barr Says Trump Needs to Get Some Balls | nan | 0.00 |  | trump_and_us_politics |
 | 2025-06-11 | We're Heading for Civilisational Collapse | nan | 0.00 |  |  |
@@ -212,8 +202,9 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-05-29 | Why do Brits feel so guilty? | nan | 0.00 |  | uk_politics |
 | 2025-05-27 | USAID Gave $3M to Gazan Rapper… Kanye Would’ve Done It Free | nan | 0.00 |  | israel_and_middle_east |
 | 2025-05-22 | Comedian Ari Matti's Jordan Peterson Impression | nan | 0.00 |  | free_speech_and_censorship |
-| 2025-05-21 | Why More Jews Died in the Netherlands Than in France During WWII - JRE Podcast | JRE Podcast | 0.00 |  | uk_politics |
+| 2025-05-21 | Why More Jews Died in the Netherlands Than in France During WWII - JRE Podcast | nan | 0.00 |  | uk_politics |
 | 2025-05-20 | The 4 Parenting Rules for Happier, Healthier Kids | nan | 0.00 |  |  |
+| 2025-05-19 | How the Italian Ultras Took Over Football — Joe Rogan Podcast | nan | 0.00 |  |  |
 | 2025-05-15 | Who's messaging Lily Phillips? | nan | 0.00 |  |  |
 | 2025-05-15 | Are You Calling Me A Hysterical Woman? | nan | 0.00 |  |  |
 | 2025-05-14 | Triggernometry Meets Guilty Feminist | nan | 0.00 |  |  |
@@ -241,32 +232,26 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2025-02-26 | Erik Prince - War Will Never Be The Same | nan | 0.00 |  | free_speech_and_censorship, israel_and_middle_east, russia_ukraine_geopolitics |
 | 2025-02-23 | The State of Britain - Konstantin Kisin & Francis Foster | nan | 0.00 |  | immigration_and_borders, trump_and_us_politics, uk_politics, climate_and_environment, economy_and_cost_of_living |
 | 2025-02-18 | DEBATE: Can Immigrants Become English? Konstantin Kisin vs Fraser Nelson | nan | 0.00 |  | immigration_and_borders, uk_politics, russia_ukraine_geopolitics |
-| 2025-02-12 | Matthew Syed on Cousin Marriage, Immigration and Diversity | Matthew Syed | 0.00 |  | woke_and_cancel_culture, immigration_and_borders, islam_and_extremism, trump_and_us_politics, economy_and_cost_of_living, culture_war_general |
 | 2025-02-10 | Why I’m Not A Fan Of Only Fans - Francis Foster | nan | 0.00 |  |  |
 | 2025-01-29 | The Liberal Elite’s Grip on Power is Over - Francis Foster | nan | 0.00 |  | free_speech_and_censorship, culture_war_general |
 | 2025-01-29 | Porn, Only Fans and Bodycount - Candice Horbacz | Candice Horbacz | 0.00 |  | culture_war_general |
 | 2025-01-26 | Melissa Chen - Should We Ban TikTok? | nan | 0.00 |  | free_speech_and_censorship, russia_ukraine_geopolitics |
 | 2025-01-20 | Politicians Aren’t Your Friends - Francis Foster | nan | 0.00 |  | free_speech_and_censorship |
 | 2025-01-07 | The West’s Last Chance to Change Course - Konstantin Kisin | nan | 0.00 |  | trump_and_us_politics, economy_and_cost_of_living |
-| 2025-01-01 | You Are Being Brainwashed - Duncan Trussell | Duncan Trussell | 0.00 |  | free_speech_and_censorship, uk_politics |
 | 2024-12-29 | Triggernometry End of Year Review 2024 with Andrew Doyle and Leo Kearse | nan | 0.00 |  |  |
 | 2024-12-28 | What It Means to Be British - Stephen Fry | Stephen Fry | 0.00 |  | uk_politics |
 | 2024-12-25 | Fashion Expert: What Clothes Tell Us About Culture, Politics and War | Fashion Expert | 0.00 |  |  |
-| 2024-12-04 | Journalist Investigated for Tweet Speaks Out - Allison Pearson | Allison Pearson | 0.00 |  | free_speech_and_censorship, trump_and_us_politics, uk_politics, crime_and_policing |
 | 2024-11-29 | Everything Was Better In The 90s - Francis Foster | nan | 0.00 |  |  |
 | 2024-11-28 | Tulsi Gabbard - Democrat to Trump Team | nan | 0.00 |  | trump_and_us_politics |
 | 2024-11-26 | Fine, Call Me "Right-Wing" - Konstantin Kisin | nan | 0.00 |  | trump_and_us_politics, culture_war_general |
 | 2024-11-24 | Israel Killed My Family But I Want Peace - Ahmed Fouad Alkhatib | Ahmed Fouad Alkhatib | 0.00 |  | islam_and_extremism, israel_and_middle_east, culture_war_general, crime_and_policing |
 | 2024-11-15 | How Fear Took Your Freedoms #tulsi #tulsigabbard | nan | 0.00 |  |  |
 | 2024-11-14 | DEBATE: Is Trump a Fascist? | nan | 0.00 |  | trump_and_us_politics |
-| 2024-11-06 | What Does This Mean for America - Jason Calacanis | Jason Calacanis | 0.00 |  | immigration_and_borders, trump_and_us_politics |
 | 2024-10-29 | My Shocking Report from Inside Trump's Nazi Rally - Konstantin Kisin | nan | 0.00 |  | trump_and_us_politics |
-| 2024-10-27 | The Man Who Predicted Israel Attacking Iran - Ed Husain | Ed Husain | 0.00 |  | islam_and_extremism, israel_and_middle_east, uk_politics |
 | 2024-10-25 | Resilience: Unmissable Stories of Courage with James Chiavarini | Resilience | 0.00 |  | uk_politics |
 | 2024-10-17 | Responding to Criticism of My Israel Video - Konstantin Kisin | nan | 0.00 |  | free_speech_and_censorship, israel_and_middle_east |
 | 2024-10-14 | The Cobra Effect: Why Good Intentions Don’t Solve Problems - Konstantin Kisin | nan | 0.00 |  | uk_politics |
 | 2024-10-07 | Why I’m Off the Fence About Israel’s War - Konstantin Kisin | nan | 0.00 |  | israel_and_middle_east |
-| 2024-10-02 | The Rise of WEAK Politicians - James Whale | James Whale | 0.00 |  | uk_politics |
 | 2024-09-19 | Why We Keep Losing the Immigration Debate - Konstantin Kisin | nan | 0.00 |  | immigration_and_borders |
 | 2024-08-15 | YouTube SUPPRESSES Discussion of Riots | nan | 0.00 |  | crime_and_policing |
 | 2024-08-13 | Douglas Murray Was Right - Konstantin Kisin | nan | 0.00 |  |  |
@@ -281,7 +266,6 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2024-07-10 | Are universities still meritocracies? | nan | 0.00 |  |  |
 | 2024-07-08 | Piers Morgan’s Thoughts on Meeting Elon Musk | nan | 0.00 |  | trump_and_us_politics |
 | 2024-07-08 | Do kids have it too easy? | nan | 0.00 |  |  |
-| 2024-07-07 | Rory Stewart: “We’re Living in a World of Fairy Tales” | Rory Stewart | 0.00 |  | uk_politics |
 | 2024-07-07 | Why have politicians stopped hiding their affairs? | nan | 0.00 |  |  |
 | 2024-07-06 | The evolutionary reason tribalism is hard wired into us | nan | 0.00 |  |  |
 | 2024-07-03 | What would happen if Israel stopped the war on Gaza today? | nan | 0.00 |  | israel_and_middle_east |
@@ -291,18 +275,34 @@ Use `manual_label`/`manual_notes` in `unknowns-review.csv` for persistent annota
 | 2024-06-17 | Harvard Professor: Students have it too easy - here's why... #shorts | Harvard Professor | 0.00 |  |  |
 | 2024-06-16 | Harvard Professor: The Facts About Police Brutality - Roland Fryer | Roland Fryer | 0.00 |  | israel_and_middle_east, economy_and_cost_of_living, crime_and_policing |
 | 2024-06-08 | Israel/Palestine: Social Media Vs The Truth - Sam Harris X Konstantin Kisin | nan | 0.00 |  | israel_and_middle_east |
-| 2024-06-05 | ‘Democrat Elites Just Want Power’ - Tulsi Gabbard | Tulsi Gabbard | 0.00 |  | trump_and_us_politics |
-| 2024-06-05 | Bassem Youssef: Why there wasn't a ceasefire before October 7th | Bassem Youssef | 0.00 |  | israel_and_middle_east |
 | 2024-06-04 | The secret people in the public eye don't want you to know... #shorts | nan | 0.00 |  |  |
 | 2024-05-31 | Konstantin Kisin Hosts Heated Israel-Palestine Debate | nan | 0.00 |  | israel_and_middle_east |
 | 2024-05-24 | The Time Russell Peters ALMOST Signed Matt Rife... | nan | 0.00 |  |  |
 | 2024-05-19 | Explosive Debate: Biden Vs. Trump with Destiny and Dr Sebastian Gorka | Explosive Debate | 0.00 |  | woke_and_cancel_culture, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics, economy_and_cost_of_living, culture_war_general |
 | 2024-05-15 | Alan Dershowitz Tells Truth About Trump Trial, Epstein, OJ & Harvard | nan | 0.00 |  | trump_and_us_politics |
 | 2024-05-09 | The New Trans-Guidance For Soldiers in 2024... | nan | 0.00 |  |  |
-| 2024-05-08 | Ex CIA Agent: Why Israel and Ukraine Can’t Win - Andrew Bustamante | Andrew Bustamante | 0.00 |  | israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics |
 | 2024-05-04 | How The Bolsheviks Seized Power in 1917 - Antony Beevor | Antony Beevor | 0.00 |  |  |
 | 2024-04-30 | The Atheism Delusion - Konstantin Kisin | nan | 0.00 |  | uk_politics |
 | 2024-04-27 | Jimmy Carr's Favourite Political Ideas... | nan | 0.00 |  | free_speech_and_censorship |
-| 2024-04-27 | How The Israel-Palestine Conflict Progresses From Here... - Bassem Youssef | Bassem Youssef | 0.00 |  | israel_and_middle_east |
 | 2024-04-27 | The Joe Rogan Brand… | nan | 0.00 |  |  |
 | 2024-04-23 | Ukraine and the Age of Cowards - Konstantin Kisin | nan | 0.00 |  | trump_and_us_politics, russia_ukraine_geopolitics |
+| 2024-04-21 | The Russian Revolution: An In-Depth Guide - Antony Beevor | Antony Beevor | 0.00 |  | russia_ukraine_geopolitics |
+| 2024-04-18 | Iranian Historian Explains: Iran & Israel’s Relationship | nan | 0.00 |  | israel_and_middle_east |
+| 2024-04-14 | Your duty as a Western Citizen... @scottnewman.27rouge | nan | 0.00 |  |  |
+| 2024-04-12 | Where the political system goes wrong... @scottnewman.27rouge | nan | 0.00 |  |  |
+| 2024-04-09 | Racial Segregation is.. Good??? - Francis Foster | nan | 0.00 |  |  |
+| 2024-04-09 | The death of the white male movie hero | nan | 0.00 |  |  |
+| 2024-04-08 | Nihilism: The Biggest Challenge Facing Gen Z - Konstantin Kisin | Nihilism | 0.00 |  | economy_and_cost_of_living |
+| 2024-04-07 | The mobile phone class divide | nan | 0.00 |  |  |
+| 2024-04-05 | Winston Churchill's drinking habits... | nan | 0.00 |  |  |
+| 2024-04-04 | A philosopher's take on animal welfare... | nan | 0.00 |  |  |
+| 2024-04-04 | Celebrating Scotland's New Hate Speech Laws! | nan | 0.00 |  | free_speech_and_censorship, crime_and_policing |
+| 2024-04-02 | Why "Sex Work Is Work" Is Bullsh*t - Julie Bindel | Julie Bindel | 0.00 |  | culture_war_general |
+| 2024-04-02 | The British Vs American Egg War... | nan | 0.00 |  | uk_politics |
+| 2024-04-01 | Konstantin Kisin on The Attempted Cancellation of Douglas Murray | nan | 0.00 |  |  |
+| 2024-03-30 | Everyone in LA is Living in a Bubble. | nan | 0.00 |  |  |
+| 2024-03-28 | Are We Doing Democracy Wrong? - Konstantin Kisin | nan | 0.00 |  |  |
+| 2024-03-28 | I made this character as a joke. What happened? 🤦‍♂️ | nan | 0.00 |  |  |
+| 2024-03-27 | Why Young Men Feel Lost - Connor Tomlinson | Connor Tomlinson | 0.00 |  |  |
+| 2024-03-27 | "Free Speech Isn't Under Threat"... | nan | 0.00 |  | free_speech_and_censorship |
+| 2024-03-26 | The unfortunate Naiveity of Gen Z @scottnewman.27rouge #shorts #culture | nan | 0.00 |  |  |
