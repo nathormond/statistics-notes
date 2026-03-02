@@ -2,114 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/01-exploratory-analysis.html</loc>
-    <lastmod>2026-03-01T16:36:29.819Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.191Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/02-word-frequency.html</loc>
-    <lastmod>2026-03-01T16:36:29.830Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.202Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/person-analysis.html</loc>
+    <lastmod>2026-03-01T23:57:20.225Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/TODO.html</loc>
-    <lastmod>2026-03-01T16:36:29.842Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.225Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/teaching-stats/core-concepts/central-limit-theorem.html</loc>
-    <lastmod>2026-03-01T16:36:29.844Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.227Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/teaching-stats/core-concepts/template.html</loc>
-    <lastmod>2026-03-01T16:36:29.844Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.228Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/paper-reviews/chatbot-mental-health/chatbot-postpartum-mental-health.html</loc>
-    <lastmod>2026-03-01T16:36:29.844Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.227Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/question-order-effects.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/criticism-overview.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/general-overview.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/index.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/data/uk-history-migration/overview.html</loc>
-    <lastmod>2026-03-01T16:36:29.799Z</lastmod>
-  </url>
-  <url>
-    <loc>https://NathOrmond.github.io/stats-concepts/docs/testing-ci-locally.html</loc>
-    <lastmod>2026-03-01T16:36:29.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://NathOrmond.github.io/stats-concepts/docs/tech-specs/bible-society-review/red-flag-summary.html</loc>
-    <lastmod>2026-03-01T16:36:29.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://NathOrmond.github.io/stats-concepts/docs/tech-specs/bible-society-review/r-code-templates.html</loc>
-    <lastmod>2026-03-01T16:36:29.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://NathOrmond.github.io/stats-concepts/index.html</loc>
-    <lastmod>2026-03-01T16:36:29.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://NathOrmond.github.io/stats-concepts/docs/tech-specs/bible-society-review/overview.html</loc>
-    <lastmod>2026-03-01T16:36:29.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://NathOrmond.github.io/stats-concepts/docs/routing-system.html</loc>
-    <lastmod>2026-03-01T16:36:29.800Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.170Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/data/TRIGGERnometry-video-taxonomy/overview.html</loc>
-    <lastmod>2026-03-01T16:36:29.777Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/docs/routing-system.html</loc>
+    <lastmod>2026-03-01T23:57:20.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/docs/tech-specs/bible-society-review/overview.html</loc>
+    <lastmod>2026-03-01T23:57:20.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/index.html</loc>
+    <lastmod>2026-03-01T23:57:20.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/docs/tech-specs/bible-society-review/r-code-templates.html</loc>
+    <lastmod>2026-03-01T23:57:20.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/docs/tech-specs/bible-society-review/red-flag-summary.html</loc>
+    <lastmod>2026-03-01T23:57:20.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/docs/testing-ci-locally.html</loc>
+    <lastmod>2026-03-01T23:57:20.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/data/TRIGGERnometry-video-taxonomy/unknowns-review.html</loc>
+    <lastmod>2026-03-01T23:57:20.161Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/index.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/weekly-attendance-claim.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/demographic-analysis.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/misc/bible-society-uk-revival/cofe-comparison.html</loc>
-    <lastmod>2026-03-01T16:36:29.843Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.226Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/blog/paper-reviews/index.html</loc>
-    <lastmod>2026-03-01T16:36:29.844Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.227Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/teaching-stats/core-concepts/index.html</loc>
-    <lastmod>2026-03-01T16:36:29.844Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.228Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/src/teaching-stats/core-concepts/degrees-of-freedom.html</loc>
-    <lastmod>2026-03-01T16:36:29.844Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.228Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/about.html</loc>
-    <lastmod>2026-03-01T16:36:29.777Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.145Z</lastmod>
+  </url>
+  <url>
+    <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/05-political-bias-evaluation-pipeline.html</loc>
+    <lastmod>2026-03-01T23:57:20.225Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/03-political-bias-by-topic.html</loc>
-    <lastmod>2026-03-01T16:36:29.838Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.210Z</lastmod>
   </url>
   <url>
     <loc>https://NathOrmond.github.io/stats-concepts/scripts/utils/yt-channel-data/notebooks/04-guest-interview-bias.html</loc>
-    <lastmod>2026-03-01T16:36:29.841Z</lastmod>
+    <lastmod>2026-03-01T23:57:20.220Z</lastmod>
   </url>
 </urlset>

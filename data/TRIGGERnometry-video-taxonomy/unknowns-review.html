@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>unknowns-review – Nathans Stats Stuff</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-afa37c5c79185640b9c231024f4fe5ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Nathans Stats Stuff</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching-stats" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching Stats</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching-stats">    
+        <li>
+    <a class="dropdown-item" href="../../src/teaching-stats/core-concepts/index.html">
+ <span class="dropdown-text">Core Concepts</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blog" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Blog</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-blog">    
+        <li>
+    <a class="dropdown-item" href="../../src/blog/misc/index.html">
+ <span class="dropdown-text">Misc</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../src/blog/paper-reviews/index.html">
+ <span class="dropdown-text">Paper Reviews</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#unknown-videos-for-manual-review" id="toc-unknown-videos-for-manual-review" class="nav-link active" data-scroll-target="#unknown-videos-for-manual-review">Unknown videos for manual review</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="unknown-videos-for-manual-review" class="level1">
+<h1>Unknown videos for manual review</h1>
+<p>Auto-generated by <code>03-political-bias-by-topic.ipynb</code>. Prioritized by right-guest hints and stronger guest signal. Use <code>manual_label</code>/<code>manual_notes</code> in <code>unknowns-review.csv</code> for persistent annotations.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>date</th>
+<th>title</th>
+<th>guest</th>
+<th style="text-align: right;">guest_signal</th>
+<th>right_hint</th>
+<th>topics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2026-03-01</td>
+<td>Who Decides The Rules Of Your Marriage?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="even">
+<td>2026-02-28</td>
+<td>Reality Doesn’t Care About Your Twitter Opinion</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-02-25</td>
+<td>Filter Your Water - Dr.&nbsp;Rhonda Patrick</td>
+<td>Dr.&nbsp;Rhonda Patrick</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-23</td>
+<td>Quickest Way To End A Marriage</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2026-02-22</td>
+<td>“Beyoncé Could Work At McDonald’s &amp; Marry Jay-Z. The Opposite Is Not True.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-21</td>
+<td>Men Need Relationships More Than Women</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-02-20</td>
+<td>Avoid Black Plastic - Dr.&nbsp;Rhonda Patrick</td>
+<td>Dr.&nbsp;Rhonda Patrick</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-19</td>
+<td>The Crisis Facing Young Men - Scott Galloway</td>
+<td>Scott Galloway</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-02-18</td>
+<td>This is a Public Health Crisis - Dr Rhonda Patrick</td>
+<td>Dr Rhonda Patrick</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-17</td>
+<td>The West, Russia, and Reality</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2026-02-13</td>
+<td>Multipolar Means Anti-American</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-09</td>
+<td>Enoch Powell Was Gay?!</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-02-08</td>
+<td>We’d Love To Have All The Party Leaders On Our Show</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-07</td>
+<td>James McCann Gets Fact-Checked on Triggernometry 😂</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-02-06</td>
+<td>Why Kneecap Is Better Than ISIS - James McCann</td>
+<td>James McCann</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-02-03</td>
+<td>How They Lie &amp; Why They Do It - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2026-01-28</td>
+<td>Jeremy Boreing On Candace Owens, Tucker Carlson and Nick Fuentes</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2026-01-24</td>
+<td>The Consequences Are Here</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-01-23</td>
+<td>Why We Must Draw Moral Lines</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-01-21</td>
+<td>Why Political Violence Is Rising</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-01-20</td>
+<td>When Comics Start Policing Comics</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2026-01-20</td>
+<td>Why Reform Has No Choice - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2026-01-18</td>
+<td>I Wish I Could Be Deprogrammed</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-01-17</td>
+<td>Why the World’s Gone Crazy!</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-01-13</td>
+<td>“I found TRIGGERNOMETRY very fascinating… they’re great.” - Bradley Cooper</td>
+<td>Bradley Cooper</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-01-12</td>
+<td>What Makes Women Happy?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2026-01-07</td>
+<td>Who Venezuela’s New Leader Is And Why It Matters</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2026-01-06</td>
+<td>Trump’s Vision for Venezuela - What He Really Wants</td>
+<td>What He Really Wants</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="odd">
+<td>2026-01-06</td>
+<td>Why Venezuela Isn’t Another Iraq</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-12-28</td>
+<td>The Real History of Football - Jonathan Wilson</td>
+<td>Jonathan Wilson</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-12-23</td>
+<td>Why CRAZY Ideas Are Coming Back</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-12-23</td>
+<td>2025: The Year of the Retard</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-12-21</td>
+<td>AI CEO: People Have No Idea What’s Coming! - Eoghan McCabe</td>
+<td>Eoghan McCabe</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-12-21</td>
+<td>Meghan Markle, Brigitte Macron, Piers Morgan and Feminism - Christina P</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-12-14</td>
+<td>The Real History of Islam</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism, uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-12-08</td>
+<td>Policing in the UK - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2025-12-08</td>
+<td>Do We Need to Censor Hate Speech?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="even">
+<td>2025-12-07</td>
+<td>The Masculinity Crisis and How To Solve It</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-12-04</td>
+<td>How To Protect Your Kids</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-12-03</td>
+<td>“The enemy is the super rich.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-12-03</td>
+<td>Why the Father Ted Musical Never Happened</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-12-01</td>
+<td>I Overheard This at the BBC…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-11-27</td>
+<td>“Now I don’t even want to leave the house.”- LIVE Interviews from Crowborough Protests</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2025-11-26</td>
+<td>“We are all scared.” LIVE Interviews from Crowborough Protests</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2025-11-25</td>
+<td>Hasan Piker on Socialism and China</td>
+<td>Hasan Piker</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics, economy_and_cost_of_living</td>
+</tr>
+<tr class="even">
+<td>2025-11-24</td>
+<td>Hasan Piker and Konstantin discuss immigration and public attitudes in the UK.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders</td>
+</tr>
+<tr class="odd">
+<td>2025-11-21</td>
+<td>Sam Harris on Hunter Biden Controversy, Trump Corruption and the Problem with Podcasts</td>
+<td>Sam Harris</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2025-11-20</td>
+<td>Watch This for Thanksgiving!</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-11-19</td>
+<td>“You have the ultimate responsibility as the gatekeeper of your own mind.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-11-14</td>
+<td>Should A Country At War Ever Help Its Enemy?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-11-11</td>
+<td>Stop Turning Disagreements Into Moral Crusades - Kaizen Asiedu</td>
+<td>Kaizen Asiedu</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-11-06</td>
+<td>Is Mamdani the left’s answer to Trump?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-11-06</td>
+<td>Evil Isn’t Unique To Any Group. It’s A Collective Human Inheritance.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-11-04</td>
+<td>“America does whatever America wants to do.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-11-04</td>
+<td>I Read All 16,000 of Zohran Mamdani’s Tweets. Here’s What I Learned.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-11-02</td>
+<td>Who is Zohran Mamdani?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-31</td>
+<td>Brandon Tatum Calls Out Majorie Taylor Greene</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-28</td>
+<td>Careful What You Click On - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-27</td>
+<td>Why Have So Many Americans Become Conspiratorial?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-26</td>
+<td>A Mindset We Can’t Understand</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-24</td>
+<td>“Half the calls we get aren’t crime, they’re mental health crises.” - Jay Darkmoore</td>
+<td>Jay Darkmoore</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2025-10-22</td>
+<td>We’re Back In The US 🇺🇸</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-21</td>
+<td>It’s Hard To See How A Ceasefire Will Hold While Hamas Is In Power.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2025-10-20</td>
+<td>What Happened in the Israeli Attack on Hamas Leaders in Qatar?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-10-20</td>
+<td>It’s Just Weak</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-20</td>
+<td>Our Thoughts on Gaza Ceasefire</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-10-19</td>
+<td>The Untold Story of the Gaza Ceasefire - Thomas Small</td>
+<td>Thomas Small</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism, israel_and_middle_east, trump_and_us_politics, uk_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-10-17</td>
+<td>The Center Is Turning</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-17</td>
+<td>The U-Boat That Broke Nazi Secrets</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-16</td>
+<td>What Was Life Like Aboard a Nazi U-Boat in WWII?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-15</td>
+<td>The True Story of Hitler’s U-Boat War - Roger Moorhouse</td>
+<td>Roger Moorhouse</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-10-15</td>
+<td>Where Is America’s Gold?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-14</td>
+<td>Gold Lasts Forever</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-13</td>
+<td>Why You Can’t Afford A House</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-12</td>
+<td>“Vaccines do not cause autism.” - Professor Simon Baron-Cohen</td>
+<td>Professor Simon Baron-Cohen</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>covid_and_pandemic</td>
+</tr>
+<tr class="even">
+<td>2025-10-10</td>
+<td>The outrage about flags is really about whether you’re allowed to be proud of your country.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-09</td>
+<td>What Is Autism?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-08</td>
+<td>The World’s Leading Autism Expert - Professor Sir Simon Baron-Cohen</td>
+<td>Professor Sir Simon Baron-Cohen</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>covid_and_pandemic, woke_and_cancel_culture, trump_and_us_politics, uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-10-07</td>
+<td>“They’re saying the quiet bit out loud.” - Silkie Carlo</td>
+<td>Silkie Carlo</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-07</td>
+<td>Queuing Is Civilisation</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-06</td>
+<td>What Are Digital IDs?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-05</td>
+<td>Why You Should Be Worried About Digital ID - Silkie Carlo</td>
+<td>Silkie Carlo</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>covid_and_pandemic, uk_politics, crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2025-10-04</td>
+<td>The Extraordinary Silence…And What It Tells Us - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-03</td>
+<td>LIVE Reaction to Manchester Terror Attack - Ex-Police Detective, Peter Bleksley</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2025-10-03</td>
+<td>You Can’t Solve A Problem You Won’t Admit</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-10-03</td>
+<td>Why Digital ID Is Dangerous</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-10-03</td>
+<td>“This issue isn’t actually about slavery.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-30</td>
+<td>“You Can’t Have Intergenerational Trauma For Eight Generations”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-30</td>
+<td>“The actual impact of slavery in Africa was to impoverish Africa.” - Kehinde Andrews</td>
+<td>Kehinde Andrews</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-29</td>
+<td>Why Are UK Energy Prices So High?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-28</td>
+<td>How Alfred the Great Saved England From the Vikings</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-25</td>
+<td>Why Is Israel So Divided?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-09-25</td>
+<td>I Warned You This Would Happen</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-22</td>
+<td>I Warned You This Would Happen - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-09-21</td>
+<td>The True History of England with Dan Snow</td>
+<td>Dan Snow</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-09-20</td>
+<td>“We’re in real danger of losing our souls and our humanity.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-18</td>
+<td>“When social energy is concentrated, connections flourish. Stretch it out and the magic fades.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-16</td>
+<td>I Fear For The Entire Next Generation Of Our Kids</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-16</td>
+<td>Why is Britain Heading for Financial Meltdown?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-09-15</td>
+<td>On the Ground Report From Tommy Robinson Rally - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-12</td>
+<td>Stop Calling Everyone You Disagree With Nazis</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-12</td>
+<td>Who Do You Want Around You When You Are Dying?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-12</td>
+<td>Charlie Kirk’s Murder is a Tragedy For All of Us</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-11</td>
+<td>Charlie Kirk’s Murder is a Tragedy For All of Us - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-11</td>
+<td>Iain Dale shares why he decided to write his book on Margaret Thatcher</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-08</td>
+<td>Historian Tom Holland: Islam, Christianity &amp; the West</td>
+<td>Historian Tom Holland</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism</td>
+</tr>
+<tr class="odd">
+<td>2025-09-08</td>
+<td>How the Cross Became Christianity’s Symbol of Triumph</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-07</td>
+<td>Historian Tom Holland: Islam, Christianity &amp; the West</td>
+<td>Historian Tom Holland</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, islam_and_extremism, uk_politics, culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-09-05</td>
+<td>“Europe Is More Divided Than Ever – ‘If You’re Not With Me, You’re Against Me’”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-09-04</td>
+<td>Have You Had Too Much to Think?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-04</td>
+<td>Have You Had Too Much to Think? - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, uk_politics, crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2025-09-01</td>
+<td>Careful What You Click On - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-09-01</td>
+<td>The Double Standard No One Talks About</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-08-29</td>
+<td>Responding to Netanyahu Interview Critics</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism, israel_and_middle_east, trump_and_us_politics, uk_politics, russia_ukraine_geopolitics, culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-08-25</td>
+<td>The real costs of educating a child refugee</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders</td>
+</tr>
+<tr class="even">
+<td>2025-08-22</td>
+<td>Wake Before It’s Too Late</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-08-20</td>
+<td>Asking Benjamin Netanyahu The Tough Questions</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-08-16</td>
+<td>Our Thoughts on Tommy Interview, Migrant Protests and Haters</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders, crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2025-08-15</td>
+<td>Konstantin Challenges Ann Coulter On Her Stance On Ukraine</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-08-14</td>
+<td>What happened in St Pancras, Tommy?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-08-12</td>
+<td>Facial Scar Discrimination Experiment</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-08-07</td>
+<td>Those who say they oppose “hate speech” sure don’t like having their arguments questioned, do they?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="odd">
+<td>2025-08-06</td>
+<td>How do you combat an extremist ideology that glorifies martyrdom?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism</td>
+</tr>
+<tr class="even">
+<td>2025-08-05</td>
+<td>Our discussion with Piers about whether Israel’s bombing of Gaza has been “indiscriminate”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-08-01</td>
+<td>Understanding history means confronting uncomfortable truths, not rewriting them</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-07-31</td>
+<td>“You don’t facilitate polio vaccines for nearly every child in Gaza if you’re out to destroy them.”</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>covid_and_pandemic, israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-07-31</td>
+<td>“It needs to end.” - Andrew Fox</td>
+<td>Andrew Fox</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-30</td>
+<td>The Best Israel Conversation You’ve Ever Heard</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>covid_and_pandemic, islam_and_extremism, israel_and_middle_east, uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-07-29</td>
+<td>This is why people have had enough</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-29</td>
+<td>Truth over tribe</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-29</td>
+<td>They would make you believe it was okay</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-28</td>
+<td>If it were Keir Starmer’s daughter do you think her r*pist would have been ignored for decades?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-07-28</td>
+<td>They didn’t believe me</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-23</td>
+<td>42% of UK Young Adults Still Live with Their Parents</td>
+<td>Their Parents</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-22</td>
+<td>President Trump is finally realising that Putin only wants one thing: to conquer Ukraine</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-07-21</td>
+<td>Blaming one group simplifies complex problems, giving shallow thinkers an easy escape</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-20</td>
+<td>“All it needs is a spark.” - David Betz</td>
+<td>David Betz</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-18</td>
+<td>Would we act differently if October 7th happened to us?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-07-17</td>
+<td>Why Won’t the Conflict End?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-16</td>
+<td>Our Honest Opinion on Israel - Konstantin Kisin and Francis Foster</td>
+<td>Our Honest Opinion</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-07-15</td>
+<td>Stop talking Britain down</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-07-15</td>
+<td>Childhood Stolen by Heroin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-13</td>
+<td>I Spent Years on Skid Row, Homeless &amp; Addicted - Jared K</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-10</td>
+<td>In Britain we mistake success for privilege and drive away the people we need the most</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics, culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-07-09</td>
+<td>The Experiment the Met POLICE Ignored</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2025-07-07</td>
+<td>Most people don’t give a sh*t. They just like tasty things - Mike Israetel</td>
+<td>Mike Israetel</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-07</td>
+<td>Is Britain opening its borders to the vulnerable or to the unwanted?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders, uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-07-04</td>
+<td>This is magnificent</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-04</td>
+<td>The king eats less than you</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-03</td>
+<td>Why does a violent offender have access to a kettle?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-03</td>
+<td>Can fat be beautiful?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-02</td>
+<td>Why We’re Fatter Than Ever - Mike Israetel</td>
+<td>Mike Israetel</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>covid_and_pandemic, free_speech_and_censorship</td>
+</tr>
+<tr class="odd">
+<td>2025-07-02</td>
+<td>“It’s not the food system. It’s YOU.” — Dr.&nbsp;Mike Israetel</td>
+<td>Dr.&nbsp;Mike Israetel</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-02</td>
+<td>Why are some Muslim countries better at dealing with Islamist extremists than we are?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism</td>
+</tr>
+<tr class="odd">
+<td>2025-07-01</td>
+<td>This is a systemic risk to the whole of humanity.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-07-01</td>
+<td>Why Young People REJECT Conservatism</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-07-01</td>
+<td>Why is SOCIALISM popular? ⤴️</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>economy_and_cost_of_living</td>
+</tr>
+<tr class="even">
+<td>2025-06-30</td>
+<td>The TRUTH is messy</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-29</td>
+<td>The Era of Peace is Over - Ex-CIA Agent</td>
+<td>Ex-CIA Agent</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics, crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2025-06-27</td>
+<td>Should Experts Know the Region They’re Discussing?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-26</td>
+<td>KONSTANTIN on Israel vs Iran</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2025-06-26</td>
+<td>Glenn Greenwald on Iran and Israel</td>
+<td>Glenn Greenwald</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-06-25</td>
+<td>AI is the new nuclear weapon</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-06-23</td>
+<td>The Untold Story of Iran-Iraq’s Child Soldiers</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east, uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-06-20</td>
+<td>From Proxy War to Direct Strike</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-06-20</td>
+<td>If this is what Iran’s regime does to its own children, imagine what they’d do to Israel with nukes</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-06-20</td>
+<td>Israel vs Iran</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2025-06-19</td>
+<td>Iran is the head of the octopus behind Israel’s seven-front war</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east, uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-06-18</td>
+<td>Weakness invites war</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-06-18</td>
+<td>Why I’m More Skeptical of Scientific Announcements Than Ever</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-17</td>
+<td>Why Iran Wants Israel Gone</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2025-06-16</td>
+<td>Why Israel Attacked Iran</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-06-13</td>
+<td>Roseanne Barr Says Trump Needs to Get Some Balls</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2025-06-11</td>
+<td>We’re Heading for Civilisational Collapse</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-10</td>
+<td>Britain Has Never Been a “Nation of Immigrants”. But It Will Be Soon. - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders, uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-06-10</td>
+<td>You can’t do peace deals with someone like Hitler</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-06-09</td>
+<td>Discipline means to teach by example — it doesn’t mean to punish.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-06-08</td>
+<td>Separating Fact from Fiction in World War II</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-07</td>
+<td>How the Germans defeated the French in WWII - James Holland</td>
+<td>James Holland</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-06-06</td>
+<td>South Africa Is Enforcing Racial Hiring Targets</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-06</td>
+<td>If that’s not hate speech, then what is hate speech?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="even">
+<td>2025-06-05</td>
+<td>Why Iran Is Funding South Africa to Oppose Israel</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2025-06-04</td>
+<td>Is South Africa a Failed State?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-06-04</td>
+<td>Why Most Marriages Break After Having Kids</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-06-03</td>
+<td>Why Do Americans Struggle to Understand Putin?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-06-03</td>
+<td>Why Americans Don’t Understand Vladimir Putin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-06-02</td>
+<td>We told women they could delay motherhood, but we never told them the cost.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="even">
+<td>2025-06-02</td>
+<td>Why Americans Don’t Understand Vladimir Putin - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, uk_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-06-02</td>
+<td>Why Rome was unstoppable</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-06-02</td>
+<td>Parenthood Isn’t a Right. It’s a Responsibility</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-06-01</td>
+<td>The 4 Big Lies We Tell Parents</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders</td>
+</tr>
+<tr class="even">
+<td>2025-05-30</td>
+<td>We’ve been gaslit into thinking BBC journalism was neutral — but ideology took over long ago.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-05-30</td>
+<td>How U.S. Trucks Enabled a Soviet Breakthrough in WWII</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-29</td>
+<td>Why do Brits feel so guilty?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-05-27</td>
+<td>USAID Gave $3M to Gazan Rapper… Kanye Would’ve Done It Free</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2025-05-22</td>
+<td>Comedian Ari Matti’s Jordan Peterson Impression</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="odd">
+<td>2025-05-21</td>
+<td>Why More Jews Died in the Netherlands Than in France During WWII - JRE Podcast</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2025-05-20</td>
+<td>The 4 Parenting Rules for Happier, Healthier Kids</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-05-19</td>
+<td>How the Italian Ultras Took Over Football — Joe Rogan Podcast</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-15</td>
+<td>Who’s messaging Lily Phillips?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-05-15</td>
+<td>Are You Calling Me A Hysterical Woman?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-14</td>
+<td>Triggernometry Meets Guilty Feminist</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-05-14</td>
+<td>Lily Phillips on TRIGGERnometry</td>
+<td>Lily Phillips</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-14</td>
+<td>“Marriage and Family Are My Dream” - Lily Phillips</td>
+<td>Lily Phillips</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-05-14</td>
+<td>Lily Phillips: Why I Slept With 101 Men in One Day</td>
+<td>Lily Phillips</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-13</td>
+<td>When is it important to challenge ‘experts’? 🤔</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-05-13</td>
+<td>When they say, ‘We love death as much as you love life,’ they mean it.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2025-05-12</td>
+<td>God, Science and Mysticism - Conversations with My Father Part 3</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-05-12</td>
+<td>The internet gives us access to our truth, not the truth.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-09</td>
+<td>Trump Did What..? - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, trump_and_us_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-05-09</td>
+<td>Our healthcare system is broken…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-09</td>
+<td>Wait…Cosby Wasn’t Found Guilty?!</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-05-08</td>
+<td>“Left or right, your guy is a f***ing con artist.” — Mark Normand</td>
+<td>Mark Normand</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-05-02</td>
+<td>Is Nigel Farage’s Reform Strategy Working?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-04-20</td>
+<td>Andrew Schulz - Comedy, the American Dream and Whores</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, israel_and_middle_east, trump_and_us_politics, economy_and_cost_of_living</td>
+</tr>
+<tr class="even">
+<td>2025-04-14</td>
+<td>Charlamagne tha God on a possible Trump third term</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="odd">
+<td>2025-04-11</td>
+<td>“If we talk about how bad the youth is, we failed” - Charlamagne tha God</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2025-04-04</td>
+<td>We Went to America - This Is What We Saw</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>woke_and_cancel_culture, immigration_and_borders, free_speech_and_censorship, trump_and_us_politics, uk_politics, russia_ukraine_geopolitics, climate_and_environment, economy_and_cost_of_living, crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2025-04-02</td>
+<td>Incel Expert Breaks Down Netflix’s Adolescence</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-04-01</td>
+<td>Get YOUR Questions Answered &amp; Enjoy Extra Content, Only On Substack!</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2025-03-14</td>
+<td>Conversations with My Father: Russia, Ukraine and the Battle of Civilisations</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-03-14</td>
+<td>Konstantin Kisin Returns to Question Time for 5th Appearance</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, uk_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-03-03</td>
+<td>Zelensky’s Big Mistake: Why He Made It And How He Can Fix It - Konstantin Kisin</td>
+<td>Zelensky’s Big Mistake</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2025-02-26</td>
+<td>Erik Prince - War Will Never Be The Same</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, israel_and_middle_east, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-02-23</td>
+<td>The State of Britain - Konstantin Kisin &amp; Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders, trump_and_us_politics, uk_politics, climate_and_environment, economy_and_cost_of_living</td>
+</tr>
+<tr class="even">
+<td>2025-02-18</td>
+<td>DEBATE: Can Immigrants Become English? Konstantin Kisin vs Fraser Nelson</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders, uk_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-02-10</td>
+<td>Why I’m Not A Fan Of Only Fans - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2025-01-29</td>
+<td>The Liberal Elite’s Grip on Power is Over - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2025-01-29</td>
+<td>Porn, Only Fans and Bodycount - Candice Horbacz</td>
+<td>Candice Horbacz</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="even">
+<td>2025-01-26</td>
+<td>Melissa Chen - Should We Ban TikTok?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2025-01-20</td>
+<td>Politicians Aren’t Your Friends - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="even">
+<td>2025-01-07</td>
+<td>The West’s Last Chance to Change Course - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, economy_and_cost_of_living</td>
+</tr>
+<tr class="odd">
+<td>2024-12-29</td>
+<td>Triggernometry End of Year Review 2024 with Andrew Doyle and Leo Kearse</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-12-28</td>
+<td>What It Means to Be British - Stephen Fry</td>
+<td>Stephen Fry</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="odd">
+<td>2024-12-25</td>
+<td>Fashion Expert: What Clothes Tell Us About Culture, Politics and War</td>
+<td>Fashion Expert</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-11-29</td>
+<td>Everything Was Better In The 90s - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-11-28</td>
+<td>Tulsi Gabbard - Democrat to Trump Team</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2024-11-26</td>
+<td>Fine, Call Me “Right-Wing” - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2024-11-24</td>
+<td>Israel Killed My Family But I Want Peace - Ahmed Fouad Alkhatib</td>
+<td>Ahmed Fouad Alkhatib</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism, israel_and_middle_east, culture_war_general, crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2024-11-15</td>
+<td>How Fear Took Your Freedoms #tulsi #tulsigabbard</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-11-14</td>
+<td>DEBATE: Is Trump a Fascist?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2024-10-29</td>
+<td>My Shocking Report from Inside Trump’s Nazi Rally - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="odd">
+<td>2024-10-25</td>
+<td>Resilience: Unmissable Stories of Courage with James Chiavarini</td>
+<td>Resilience</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2024-10-17</td>
+<td>Responding to Criticism of My Israel Video - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2024-10-14</td>
+<td>The Cobra Effect: Why Good Intentions Don’t Solve Problems - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2024-10-07</td>
+<td>Why I’m Off the Fence About Israel’s War - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2024-09-19</td>
+<td>Why We Keep Losing the Immigration Debate - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>immigration_and_borders</td>
+</tr>
+<tr class="even">
+<td>2024-08-15</td>
+<td>YouTube SUPPRESSES Discussion of Riots</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2024-08-13</td>
+<td>Douglas Murray Was Right - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-08-08</td>
+<td>Konstantin Kisin Debates UK Riots on the Moral Maze</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2024-08-06</td>
+<td>Men vs.&nbsp;Women - The New Olympic Sport</td>
+<td>The New Olympic Sport</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-08-04</td>
+<td>The True Cost of Family Breakdown - Melissa Kearney</td>
+<td>Melissa Kearney</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>economy_and_cost_of_living, culture_war_general, crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2024-07-26</td>
+<td>Pro-Palestine Protest Public Interviews at UCLA - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east, crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2024-07-23</td>
+<td>It’s Political Extremism All the Way Down - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>islam_and_extremism</td>
+</tr>
+<tr class="odd">
+<td>2024-07-19</td>
+<td>Why I Fear the Future - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-07-18</td>
+<td>Konstantin Kisin vs.&nbsp;Entire Audience at Doha Debates</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-07-16</td>
+<td>Trump Assassination: Why I’m Not Surprised - Konstantin Kisin</td>
+<td>Trump Assassination</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2024-07-10</td>
+<td>Are universities still meritocracies?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-07-08</td>
+<td>Piers Morgan’s Thoughts on Meeting Elon Musk</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="even">
+<td>2024-07-08</td>
+<td>Do kids have it too easy?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-07-07</td>
+<td>Why have politicians stopped hiding their affairs?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-07-06</td>
+<td>The evolutionary reason tribalism is hard wired into us</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-07-03</td>
+<td>What would happen if Israel stopped the war on Gaza today?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2024-07-02</td>
+<td>The obsession with identity and diversity</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>woke_and_cancel_culture</td>
+</tr>
+<tr class="odd">
+<td>2024-06-25</td>
+<td>Old School Lefty: Why I’m Not Excited by a Labour Government…</td>
+<td>Old School Lefty</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2024-06-18</td>
+<td>Are women too clingy in 2024?</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-06-17</td>
+<td>Harvard Professor: Students have it too easy - here’s why… #shorts</td>
+<td>Harvard Professor</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-06-16</td>
+<td>Harvard Professor: The Facts About Police Brutality - Roland Fryer</td>
+<td>Roland Fryer</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east, economy_and_cost_of_living, crime_and_policing</td>
+</tr>
+<tr class="odd">
+<td>2024-06-08</td>
+<td>Israel/Palestine: Social Media Vs The Truth - Sam Harris X Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2024-06-04</td>
+<td>The secret people in the public eye don’t want you to know… #shorts</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-05-31</td>
+<td>Konstantin Kisin Hosts Heated Israel-Palestine Debate</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="even">
+<td>2024-05-24</td>
+<td>The Time Russell Peters ALMOST Signed Matt Rife…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-05-19</td>
+<td>Explosive Debate: Biden Vs. Trump with Destiny and Dr Sebastian Gorka</td>
+<td>Explosive Debate</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>woke_and_cancel_culture, islam_and_extremism, israel_and_middle_east, trump_and_us_politics, russia_ukraine_geopolitics, economy_and_cost_of_living, culture_war_general</td>
+</tr>
+<tr class="even">
+<td>2024-05-15</td>
+<td>Alan Dershowitz Tells Truth About Trump Trial, Epstein, OJ &amp; Harvard</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics</td>
+</tr>
+<tr class="odd">
+<td>2024-05-09</td>
+<td>The New Trans-Guidance For Soldiers in 2024…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-05-04</td>
+<td>How The Bolsheviks Seized Power in 1917 - Antony Beevor</td>
+<td>Antony Beevor</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-04-30</td>
+<td>The Atheism Delusion - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2024-04-27</td>
+<td>Jimmy Carr’s Favourite Political Ideas…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="odd">
+<td>2024-04-27</td>
+<td>The Joe Rogan Brand…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-04-23</td>
+<td>Ukraine and the Age of Cowards - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>trump_and_us_politics, russia_ukraine_geopolitics</td>
+</tr>
+<tr class="odd">
+<td>2024-04-21</td>
+<td>The Russian Revolution: An In-Depth Guide - Antony Beevor</td>
+<td>Antony Beevor</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>russia_ukraine_geopolitics</td>
+</tr>
+<tr class="even">
+<td>2024-04-18</td>
+<td>Iranian Historian Explains: Iran &amp; Israel’s Relationship</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>israel_and_middle_east</td>
+</tr>
+<tr class="odd">
+<td>2024-04-14</td>
+<td>Your duty as a Western Citizen… <span class="citation" data-cites="scottnewman.27rouge">(<a href="#ref-scottnewman.27rouge" role="doc-biblioref"><strong>scottnewman.27rouge?</strong></a>)</span></td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-04-12</td>
+<td>Where the political system goes wrong… <span class="citation" data-cites="scottnewman.27rouge">(<a href="#ref-scottnewman.27rouge" role="doc-biblioref"><strong>scottnewman.27rouge?</strong></a>)</span></td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-04-09</td>
+<td>Racial Segregation is.. Good??? - Francis Foster</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-04-09</td>
+<td>The death of the white male movie hero</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-04-08</td>
+<td>Nihilism: The Biggest Challenge Facing Gen Z - Konstantin Kisin</td>
+<td>Nihilism</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>economy_and_cost_of_living</td>
+</tr>
+<tr class="even">
+<td>2024-04-07</td>
+<td>The mobile phone class divide</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-04-05</td>
+<td>Winston Churchill’s drinking habits…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-04-04</td>
+<td>A philosopher’s take on animal welfare…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-04-04</td>
+<td>Celebrating Scotland’s New Hate Speech Laws!</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship, crime_and_policing</td>
+</tr>
+<tr class="even">
+<td>2024-04-02</td>
+<td>Why “Sex Work Is Work” Is Bullsh*t - Julie Bindel</td>
+<td>Julie Bindel</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>culture_war_general</td>
+</tr>
+<tr class="odd">
+<td>2024-04-02</td>
+<td>The British Vs American Egg War…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>uk_politics</td>
+</tr>
+<tr class="even">
+<td>2024-04-01</td>
+<td>Konstantin Kisin on The Attempted Cancellation of Douglas Murray</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-03-30</td>
+<td>Everyone in LA is Living in a Bubble.</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-03-28</td>
+<td>Are We Doing Democracy Wrong? - Konstantin Kisin</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-03-28</td>
+<td>I made this character as a joke. What happened? 🤦‍♂️</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2024-03-27</td>
+<td>Why Young Men Feel Lost - Connor Tomlinson</td>
+<td>Connor Tomlinson</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2024-03-27</td>
+<td>“Free Speech Isn’t Under Threat”…</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td>free_speech_and_censorship</td>
+</tr>
+<tr class="even">
+<td>2024-03-26</td>
+<td>The unfortunate Naiveity of Gen Z <span class="citation" data-cites="scottnewman.27rouge">(<a href="#ref-scottnewman.27rouge" role="doc-biblioref"><strong>scottnewman.27rouge?</strong></a>)</span> #shorts #culture</td>
+<td>nan</td>
+<td style="text-align: right;">0.00</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/NathOrmond\.github\.io\/stats-concepts");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
